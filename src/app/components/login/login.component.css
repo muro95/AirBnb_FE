@@ -1,0 +1,31 @@
+.btn-light {
+    border: 2px solid gray;
+    border-radius: 7px;
+    height: auto;
+    width: 40%;
+    margin-left: 30%;
+    text-align: left;
+    margin-top: 10%;
+}
+.btn-light .btn-primary {
+    /*margin-left:auto;*/
+    /*margin-right:auto;*/
+    margin-left: 45%;
+    width: auto;
+}
+/*.form-login #title {*/
+
+/*    text-align: center;*/
+/*}*/
+/*.btn-primary {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.btn-primary button{*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*}*/
+/*!*.button {*!*/
+/*!*    position: absolute;*!*/
+/*!*    top: 50%;*!*/
+/*!*}*!*/
