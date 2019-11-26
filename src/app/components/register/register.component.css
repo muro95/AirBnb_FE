@@ -1,67 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
+.btn-light {
+  border: 2px solid gray;
+  border-radius: 7px;
+  height: auto;
+  width: 40%;
+  margin-left: 30%;
+  text-align: left;
+  margin-top: 10%;
 }
-.header {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid;
-    margin-bottom: 3%;
-}
-
-#logo img {
-    width: 80px;
-    height: auto;
-}
-.glyphicon-search {
-    width: 60%;
-    height: 60%;
-    margin-top: 2%;
-    border-style: outset;
-    opacity: 0.8;
-    color: black;
-    font-family: "Arial";
-}
-#navbar {
-    margin-top: 2%;
-}
-.nav-link {
-    color: black;
-    font-weight: 600;
-    opacity: 0.6;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #17a2b8;
-    height: 100vh;
-}
-#login .container #login-row #login-column #login-box {
-    margin-top: 120px;
-    max-width: 600px;
-    height: 320px;
-    border: 1px solid #9C9C9C;
-    background-color: #EAEAEA;
-}
-#login .container #login-row #login-column #login-box #login-form {
-    padding: 20px;
-}
-#login .container #login-row #login-column #login-box #login-form #register-link {
-    margin-top: -85px;
-}
-.register {
-    color: blue;
-    margin-bottom: 1%;
-    margin-top: 2%;
-}
-.form-check-label {
-    margin-top: 3%;
-}
-.form-check-input {
-    margin-top: 1%;
-}
-.white-text {
-    color: blue;
+.btn-light .btn-primary {
+  /*margin-left:auto;*/
+  /*margin-right:auto;*/
+  margin-left: 45%;
+  width: auto;
 }
 
