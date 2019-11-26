@@ -1,100 +1,51 @@
-<div class="header col-md-12">
-    <div class="row">
-        <div id="logo" class="nav-item">
-            <img src="../assets/images/airbnb-3383993_960_720.png" alt="" routerLink="">
-        </div>
-        <div class="col-md-6 nav-item" id="input-search">
-            <input type="text" class="glyphicon glyphicon-search" placeholder='Try "London"'>
-        </div>
-        <div class="col-md-5" id="navbar">
-            <ul class="nav">
-                <li class="nav-item col-md-4">
-                    <a class="nav-link active" href="#">Become host</a>
-                </li>
-                <li class="nav-item col-md-4">
-                    <a class="nav-link" href="#">Help</a>
-                </li>
-                <li class="nav-item col-md-3">
-                    <a class="nav-link" routerLink="/register">Sign up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/login" tabindex="-1">Login</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div *ngIf="isSuccess" class="alert alert-success" role="alert">
+  Đã Register thành công!
 </div>
-<div class="row">
-    <div class="col-md-10 col-lg-8 col-xl-5 mx-xl-auto">
-        <!--Section: Live preview-->
-        <section class="form-dark scrollbar-dusty-grass thin square">
 
-            <!--Form without header-->
-            <div class="card card-image"
-                 style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');">
-                <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
-
-                    <!--Header-->
-                    <div class="text-center">
-                        <h3 class="white-text mb-5 mt-4 font-weight-bold"><strong>SIGN</strong> <a
-                                class="green-text font-weight-bold"><strong>
-                            UP</strong></a></h3>
-                    </div>
-
-                    <!--Body-->
-                    <div class="md-form">
-                        <label for="Form-name5" class="register">Name</label>
-                        <input type="text" id="Form-name5" class="form-control white-text">
-                    </div>
-                    <div class="md-form">
-                        <label for="Form-surname5" class="register">Surname</label>
-                        <input type="text" id="Form-surname5" class="form-control white-text">
-                    </div>
-                    <div class="md-form">
-                        <label for="Form-email5" class="register">Email</label>
-                        <input type="text" id="Form-email5" class="form-control white-text">
-                    </div>
-
-                    <div class="md-form pb-3" class="register">
-                        <label for="Form-pass5">Password</label>
-                        <input type="password" id="Form-pass5" class="form-control white-text">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="checkbox6">
-                            <label for="checkbox6" class="form-check-label white-text">Accept the<a href="#" class="green-text font-weight-bold">
-                                Terms and Conditions</a></label>
-                        </div>
-                    </div>
-
-                    <!--Grid row-->
-                    <div class="row d-flex align-items-center mb-4">
-
-                        <!--Grid column-->
-                        <div class="text-center mb-3 col-md-12">
-                            <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1">Sign in
-                            </button>
-                        </div>
-                        <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-                        <p class="font-small d-flex justify-content-end">
-                            Have an account?
-                            <a href="#" class="green-text ml-1 font-weight-bold">
-                                Log in</a>
-                        </p>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-            </div>
-            <!--/Form without header-->
-
-        </section>
-        <!--Section: Live preview-->
-
+<form [formGroup]="userNameForm" (ngSubmit)="onSubmit()">
+  <label class="btn btn-light  ">
+    <h2 style="text-align: center;">Register</h2>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" class="form-control" id="exampleInputName" aria-describedby="Name"
+             placeholder="User Name"
+             formControlName="userName">
     </div>
-    <!-- Grid column -->
-</div>
-<!-- Grid row -->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Email"
+             placeholder="@email"
+             formControlName="Email">
+      <small id="emailHelp" class="form-text text-muted">
+        Enter an unregistered email.
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">User Name</label>
+      <input type="text" class="form-control" id="exampleInputUserName" aria-describedby="User Name"
+             placeholder="User Name"
+             formControlName="userName">
+      <small id="userHelp" class="form-text text-muted">
+        We will never share your user name with anyone else.
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+             formControlName="password"
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Retype Password</label>
+      <input type="password" class="form-control" id="exampleCheckPassword1" placeholder="Retype Password"
+             formControlName="password"
+      >
+    </div>
+    <!--        <div class="form-group form-check">-->
+    <!--            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+    <!--            <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+    <!--        </div>-->
+    <button type="submit" class="btn btn-primary ">Login</button>
+  </label>
+
+</form>
