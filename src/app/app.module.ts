@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
 import {ServiceComponent} from './service/service.component';
 import {ModelsComponent} from './models/models.component';
 import {ComponentsComponent} from './components/components.component';
@@ -11,6 +10,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
     {
@@ -18,6 +18,7 @@ const routes: Routes = [
     },
 ];
 
+// @ts-ignore
 @NgModule({
     declarations: [
         AppComponent,
