@@ -10,6 +10,8 @@ import {NgModule} from '@angular/core';
 import { UserComponent } from './components/user/user.component';
 import { PmComponent } from './components/pm/pm.component';
 import { AdminComponent } from './components/admin/admin.component';
+import {httpInterceptorProviders} from './auth/auth-interceptor';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -33,10 +35,11 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {
