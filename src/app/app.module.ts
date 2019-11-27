@@ -7,6 +7,9 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { UserComponent } from './components/user/user.component';
+import { PmComponent } from './components/pm/pm.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -21,7 +24,10 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserComponent,
+    PmComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
