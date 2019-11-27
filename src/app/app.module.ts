@@ -19,7 +19,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ModelsComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent
