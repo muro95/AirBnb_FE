@@ -4,7 +4,6 @@ import {TokenStorageService} from '../../auth/token-storage.service';
 import {AuthLoginInfo} from '../../auth/login-infor';
 import {Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
