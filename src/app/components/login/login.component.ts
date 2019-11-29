@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
+      console.log('token_:' + this.tokenStorage.getToken());
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
     }
@@ -35,12 +36,14 @@ export class LoginComponent implements OnInit {
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
       this.form.password);
-
+// store to web browser;
     this.authService.attemptAuth(this.loginInfo).subscribe(
-      data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUsername(data.username);
-        this.tokenStorage.saveAuthorities(data.roles);
+      responseJWT => {
+        console.log('get UserName from BE:' + responseJWT.data.username);
+        console.log('get token from BE:' + responseJWT.data.accessToken);
+        this.tokenStorage.saveToken(responseJWT.data.accessToken);
+        this.tokenStorage.saveUsername(responseJWT.data.username);
+        this.tokenStorage.saveAuthorities(responseJWT.data.roles);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;

@@ -1,11 +1,13 @@
-<div class="login-airbnb">
-<div *ngIf="isSuccess" class="alert alert-danger" role="alert">
-  Bạn đã nhập sai thông tin đăng nhập vui lòng kiểm tra lại.!
+<div>
 </div>
-<div id="logreg-forms">
-  <div *ngIf="isLoggedIn; else loggedOut" class="alert alert-success" role="alert">
-    Đã login thành công! {{roles}}
+<div class="login-airbnb">
+  <div *ngIf="isSuccess" class="alert alert-danger" role="alert">
+    Bạn đã nhập sai thông tin đăng nhập vui lòng kiểm tra lại.!
   </div>
+  <div id="logreg-forms">
+    <div *ngIf="isLoggedIn; else loggedOut" class="alert alert-success" role="alert">
+      Đã login thành công! {{roles}}
+    </div>
     <ng-template #loggedOut>
       <form class="form-signin col-md-12 col-sm-12" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
             novalidate>
@@ -34,14 +36,15 @@
         <a href="#" id="forgot_pswd">Forgot password?</a>
         <hr>
         <!-- <p>Don't have an account!</p>  -->
-        <button class="btn btn-primary btn-siginin-signup" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
+        <button class="btn btn-primary btn-siginin-signup" type="button" id="btn-signup"><i
+          class="fas fa-user-plus"></i>
           Sign up
           New Account
         </button>
       </form>
     </ng-template>
     <router-outlet></router-outlet>
-</div>
+  </div>
   <!--   end-->
 
   <!--  <form action="/reset/password/" class="form-reset">-->

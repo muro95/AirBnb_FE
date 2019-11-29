@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+    console.log('token from Browser:' + this.info.token);
   }
 
   logout() {
