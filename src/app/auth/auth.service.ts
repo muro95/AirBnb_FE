@@ -4,7 +4,6 @@ import {AuthLoginInfo} from './login-infor';
 import {Observable} from 'rxjs';
 import {JwtResponse} from './jwt-response';
 import {SignUpInfo} from './sigup-info';
-import {Router} from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../../auth/token-storage.service';
+import {Info} from '../../auth/info';
 
 
 @Component({
@@ -8,7 +9,7 @@ import {TokenStorageService} from '../../auth/token-storage.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  info: any;
+  info: Info;
 
   constructor(private token: TokenStorageService) {
   }

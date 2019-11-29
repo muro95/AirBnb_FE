@@ -3,6 +3,7 @@ import {AuthService} from '../../auth/auth.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {AuthLoginInfo} from '../../auth/login-infor';
 import {Router} from '@angular/router';
+import {JwtResponse} from '../../auth/jwt-response';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   private loginInfo: AuthLoginInfo;
   isSuccess = false;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) {
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router ) {
   }
 
   ngOnInit() {
@@ -30,17 +31,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    // console.log(this.form);
 
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
       this.form.password);
 
     this.authService.attemptAuth(this.loginInfo).subscribe(
-      data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUsername(data.username);
-        this.tokenStorage.saveAuthorities(data.roles);
+      result => {
+        this.tokenStorage.saveToken(result.data.accessToken);
+        this.tokenStorage.saveUsername(result.data.username);
+        this.tokenStorage.saveAuthorities(result.data.roles);
+        // this.tokenStorage.saveTokenType(result.tokenType);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
