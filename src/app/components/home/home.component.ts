@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../../auth/token-storage.service';
 
 
@@ -10,7 +10,8 @@ import {TokenStorageService} from '../../auth/token-storage.service';
 export class HomeComponent implements OnInit {
   info: any;
 
-  constructor(private token: TokenStorageService) { }
+  constructor(private token: TokenStorageService) {
+  }
 
   ngOnInit() {
     this.info = {
