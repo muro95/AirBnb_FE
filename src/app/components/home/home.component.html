@@ -2,8 +2,8 @@
   <h5 class="text-primary">Your Information</h5>
   <p>
     <strong>Username:</strong> {{info.username}}<br/>
-    <strong>Roles:</strong> {{info.authorities}}<br/>
-    <strong>Token:</strong> {{info.token}}
+    <strong>Roles:</strong> {{info.authorities}}<br />
+    <strong>Token:</strong> {{info.token}}.
   </p>
   <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>
@@ -11,6 +11,7 @@
 <ng-template #loggedOut>
   Please login.
 </ng-template>
+
 <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

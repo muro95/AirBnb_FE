@@ -1,24 +1,21 @@
-<div *ngIf="isSuccess" class="alert alert-danger" role="alert">
-  Bạn đã nhập sai thông tin đăng nhập vui lòng kiểm tra lại.!
-</div>
-<div id="logreg-forms">
-  <div *ngIf="isLoggedIn; else loggedOut" class="alert alert-success" role="alert">
-    Đã login thành công! {{roles}}
+<div class="login-airbnb">
+  <div *ngIf="isSuccess" class="alert alert-danger" role="alert">
+    Bạn đã nhập sai thông tin đăng nhập vui lòng kiểm tra lại.!
   </div>
-  <ng-template #loggedOut>
-    <form class="form-signin col-md-12 col-sm-12" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
-          novalidate>
-      <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-      <div class="social-login">
-        <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span>
-        </button>
-        <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span>
-        </button>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
-               required minlength="6" id="exampleInputPassword1" placeholder="Password" >
+  <div id="logreg-forms">
+    <div *ngIf="isLoggedIn; else loggedOut" class="alert alert-success" role="alert">
+      Đã login thành công! {{roles}}
+    </div>
+    <ng-template #loggedOut>
+      <form class="form-signin col-md-12 col-sm-12" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+            novalidate>
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+        <div class="social-login">
+          <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span>
+          </button>
+          <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span>
+          </button>
+        </div>
         <p style="text-align:center" id="or"> OR </p>
         <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
                required
@@ -37,105 +34,11 @@
         <a href="#" id="forgot_pswd">Forgot password?</a>
         <hr>
         <!-- <p>Don't have an account!</p>  -->
-        <button class="btn btn-primary btn-siginin-signup" type="button" id="btn-signup"><i
-          class="fas fa-user-plus"></i>
+        <button class="btn btn-primary btn-siginin-signup" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
           Sign up
           New Account
         </button>
-      </div>
-    </form>
-  </ng-template>
-  <router-outlet></router-outlet>
-
-  <!--   end-->
-
-  <!--  <form action="/reset/password/" class="form-reset">-->
-  <!--    <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">-->
-  <!--    <button class="btn btn-primary btn-block" type="submit">Reset Password</button>-->
-  <!--    <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>-->
-  <!--  </form>-->
-
-  <!--  <form action="/signup/" class="form-signup col-md-12">-->
-  <!--    <div class="social-login col-md-6">-->
-  <!--      <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span>-->
-  <!--      </button>-->
-  <!--    </div>-->
-  <!--    <div class="social-login col-md-6">-->
-  <!--      <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span>-->
-  <!--      </button>-->
-  <!--    </div>-->
-
-  <!--    <p style="text-align:center">OR</p>-->
-
-  <!--    <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">-->
-  <!--    <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">-->
-  <!--    <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">-->
-  <!--    <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required-->
-  <!--           autofocus="">-->
-
-  <!--    <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>-->
-  <!--    <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>-->
-  <!--  </form>-->
-  <!--  <br>-->
-  <!--</div>-->
-  <!--<script>-->
-  <!--    function toggleResetPswd(e){-->
-  <!--        e.preventDefault();-->
-  <!--        $('#logreg-forms .form-signin').toggle() // display:block or none-->
-  <!--        $('#logreg-forms .form-reset').toggle() // display:block or none-->
-  <!--    }-->
-
-  <!--    function toggleSignUp(e){-->
-  <!--        e.preventDefault();-->
-  <!--        $('#logreg-forms .form-signin').toggle(); // display:block or none-->
-  <!--        $('#logreg-forms .form-signup').toggle(); // display:block or none-->
-  <!--    }-->
-
-  <!--    $(()=>{-->
-  <!--        // Login Register Form-->
-  <!--        $('#logreg-forms #forgot_pswd').click(toggleResetPswd);-->
-  <!--        $('#logreg-forms #cancel_reset').click(toggleResetPswd);-->
-  <!--        $('#logreg-forms #btn-signup').click(toggleSignUp);-->
-  <!--        $('#logreg-forms #cancel_signup').click(toggleSignUp);-->
-  <!--    })-->
-  <!--</script>-->
-  <!--<div class="login">-->
-
-  <!--begin-->
-
-  <!--  <div *ngIf="isLoggedIn; else loggedOut" class="alert alert-success" role="alert">-->
-  <!--    Đã login thành công! {{roles}}-->
-  <!--  </div>-->
-
-  <!--  <ng-template #loggedOut>-->
-
-  <!--    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>-->
-  <!--      <label class="btn btn-light  ">-->
-
-  <!--        <h2 style="text-align: center;">Login</h2>-->
-  <!--        <div class="form-group">-->
-
-  <!--          <label for="exampleInputEmail1">User Name</label>-->
-  <!--          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"-->
-  <!--                 required-->
-  <!--                 id="exampleInputEmail1" aria-describedby="User Name"-->
-  <!--                 placeholder="User Name">-->
-  <!--          <small id="emailHelp" class="form-text text-muted">-->
-  <!--            We will never share your user name with anyone else.-->
-  <!--          </small>-->
-  <!--        </div>-->
-  <!--        <div class="form-group">-->
-  <!--          <label for="exampleInputPassword1">Password</label>-->
-  <!--          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"-->
-  <!--                 required minlength="6" id="exampleInputPassword1" placeholder="Password"-->
-
-  <!--          >-->
-  <!--        </div>-->
-  <!--        &lt;!&ndash;        <div class="form-group form-check">&ndash;&gt;-->
-  <!--        &lt;!&ndash;            <input type="checkbox" class="form-check-input" id="exampleCheck1">&ndash;&gt;-->
-  <!--        &lt;!&ndash;            <label class="form-check-label" for="exampleCheck1">Check me out</label>&ndash;&gt;-->
-  <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
-  <!--        <button type="submit" class="btn btn-primary ">Login</button>-->
-  <!--      </label>-->
-  <!--    </form>-->
-  <!--  </ng-template>-->
+      </form>
+    </ng-template>
+    <router-outlet></router-outlet>
+  </div>
