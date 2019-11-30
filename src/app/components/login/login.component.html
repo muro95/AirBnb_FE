@@ -1,5 +1,6 @@
 <div>
 </div>
+<div class="parent-login">
 <div class="login-airbnb">
   <div *ngIf="isSuccess" class="alert alert-danger" role="alert">
     Bạn đã nhập sai thông tin đăng nhập vui lòng kiểm tra lại.!
@@ -22,7 +23,6 @@
         <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
                required
                id="exampleInputUserName" aria-describedby="User Name" placeholder="User Name">
-
         <!--      <small id="email" class="form-text text-muted">-->
         <!--        We will never share your user name with anyone else.-->
         <!--      </small>-->
@@ -36,7 +36,7 @@
         <a href="#" id="forgot_pswd">Forgot password?</a>
         <hr>
         <!-- <p>Don't have an account!</p>  -->
-        <button class="btn btn-primary btn-siginin-signup" type="button" id="btn-signup"><i
+        <button routerLink="/register" class="btn btn-primary btn-siginin-signup" type="button" id="btn-signup"><i
           class="fas fa-user-plus"></i>
           Sign up
           New Account
@@ -45,6 +45,7 @@
     </ng-template>
     <router-outlet></router-outlet>
   </div>
+</div>
   <!--   end-->
 
   <!--  <form action="/reset/password/" class="form-reset">-->
@@ -137,4 +138,3 @@
   <!--      </label>-->
   <!--    </form>-->
   <!--  </ng-template>-->
-
