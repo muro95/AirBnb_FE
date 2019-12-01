@@ -12,6 +12,7 @@ import { PmComponent } from './components/pm/pm.component';
 import { AdminComponent } from './components/admin/admin.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
+import { HomeDetailComponent } from './components/home-detail/home-detail.component';
 
 
 
@@ -29,7 +30,8 @@ const routes: Routes = [
     RegisterComponent,
     UserComponent,
     PmComponent,
-    AdminComponent
+    AdminComponent,
+    HomeDetailComponent
   ],
   imports: [
     BrowserModule,

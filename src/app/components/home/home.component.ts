@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../../auth/token-storage.service';
+import {House} from '../../interface/house';
+import {HouseService} from '../../services/house.service';
 
 
 @Component({
@@ -8,11 +10,20 @@ import {TokenStorageService} from '../../auth/token-storage.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  info: any;
+  private info: any;
 
-  constructor(private token: TokenStorageService) { }
+  houseList: House[];
+
+  searchAddress = '';
+
+
+  constructor(private token: TokenStorageService,
+              private houseService: HouseService
+  ) {
+  }
 
   ngOnInit() {
+    this.getHouseList();
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
@@ -24,5 +35,11 @@ export class HomeComponent implements OnInit {
   logout() {
     this.token.signOut();
     window.location.reload();
+  }
+
+  private getHouseList() {
+    this.houseService.getList().subscribe(result => {
+      this.houseList = result;
+    });
   }
 }
