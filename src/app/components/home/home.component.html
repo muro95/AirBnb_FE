@@ -1,13 +1,13 @@
-<div>
- <div *ngIf="house">
-  <div  *ngFor="let houseItem of house.data,index as i">
-    <div>
-        <p>Name:{{ houseItem.name}}</p>
-        <p>Category name: {{ houseItem.catName }}</p>
-    </div>
-  </div>
- </div>
-</div>
+<!--<div>-->
+<!-- <div *ngIf="house">-->
+<!--  <div  *ngFor="let houseItem of house.data,index as i">-->
+<!--    <div>-->
+<!--        <p>Name:{{ houseItem.name}}</p>-->
+<!--        <p>Category name: {{ houseItem.catName }}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!-- </div>-->
+<!--</div>-->
 
 
 <div *ngIf="info.token; else loggedOut">
@@ -160,4 +160,4 @@
         </div>
     </div>
 </div>
-
+<router-outlet></router-outlet>

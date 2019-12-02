@@ -1,3 +1,42 @@
+<!--<div class="header col-md-12">-->
+<!--  <div class="row">-->
+<!--    <div id="logo" class="nav-item">-->
+<!--      <img src="../assets/images/airbnb-3383993_960_720.png" alt="" routerLink="/home">-->
+<!--    </div>-->
+<!--    <div class="col-md-6 nav-item" id="input-search">-->
+<!--      <input type="text" class="glyphicon glyphicon-search" placeholder='Try "London"'>-->
+<!--    </div>-->
+<!--    <div class="col-md-5" id="navbar">-->
+<!--      <ul class="nav navbar-toggler">-->
+<!--        <li class="nav-item col-md-4">-->
+<!--          <a class="nav-link active" href="#">Become Host</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a class="nav-link active" routerLink="/home/house-list-for-guest">Our houses</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown col-md-4">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--            Host functions-->
+<!--          </a>-->
+<!--          <div class="dropdown-menu">-->
+<!--            <a class="dropdown-item"></a>-->
+<!--            <a class="dropdown-item" href="#">Another action</a>-->
+<!--            <a class="dropdown-item" href="#">Something else here</a>-->
+<!--            <div class="dropdown-divider"></div>-->
+<!--            <a class="dropdown-item" href="#">Separated link</a>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="nav-item col-md-3">-->
+<!--          <a class="nav-link" routerLink="/register">Become User</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" routerLink="/login" tabindex="-1">Login</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<router-outlet></router-outlet>-->
 <div class="header col-md-12">
   <div class="row">
     <div id="logo" class="nav-item">
@@ -12,23 +51,28 @@
           <a class="nav-link active" href="#">Become host</a>
         </li>
         <li class="nav-item dropdown col-md-4">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">AirBnb Page</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+          <a class="nav-link dropdown-toggle" id="AirBnb-Page" href="#" id="navbarDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            AirBnb Page
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/home/house-list-for-guest">ListHome</a>
+            <a class="dropdown-item">View Home</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </li>
         <li class="nav-item col-md-3">
           <a class="nav-link" routerLink="/register">Sign up</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a class="nav-link" routerLink="/login" tabindex="-1">Login</a>
         </li>
       </ul>
     </div>
   </div>
 </div>
+
+
 <router-outlet></router-outlet>
+
+

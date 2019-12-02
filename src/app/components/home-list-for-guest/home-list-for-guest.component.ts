@@ -1,28 +1,20 @@
 import {Component, OnInit} from '@angular/core';
-import {TokenStorageService} from '../../auth/token-storage.service';
 import {House} from '../../interface/house-list/house';
+import {TokenStorageService} from '../../auth/token-storage.service';
 import {HouseService} from '../../services/house.service';
-import {Data} from '@angular/router';
-import {DataHouseList} from '../../interface/house-list/dataHouseList';
-
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home-list-for-guest',
+  templateUrl: './home-list-for-guest.component.html',
+  styleUrls: ['./home-list-for-guest.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeListForGuestComponent implements OnInit {
   private info: any;
 
-   house: House;
-
-
-  searchAddress = '';
-
+  house: House;
 
   constructor(private token: TokenStorageService,
-              private houseService: HouseService
-  ) {
+              private houseService: HouseService) {
   }
 
   ngOnInit() {
@@ -35,15 +27,11 @@ export class HomeComponent implements OnInit {
     console.log('token from Browser:' + this.info.token);
   }
 
-  logout() {
-    this.token.signOut();
-    window.location.reload();
-  }
-
   private getHouseList() {
     this.houseService.getList().subscribe(result => {
       this.house = result;
-      console.log('>>> house list:' + JSON.stringify(this.house));
+      console.log('>>>>House list:' + JSON.stringify(this.house));
     });
   }
+
 }

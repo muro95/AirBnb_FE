@@ -13,6 +13,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeDetailComponent } from './components/home-detail/home-detail.component';
+import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
+
 
 
 
@@ -33,6 +35,7 @@ const routes: Routes = [
     PmComponent,
     AdminComponent,
     HomeDetailComponent,
+    HomeListForGuestComponent,
 
   ],
   imports: [

@@ -1,0 +1,26 @@
+<h1> List of houses</h1>
+<div class="container">
+
+
+    <div *ngIf="house">
+      <div class="row">
+      <div class="col-sm-4" *ngFor="let houseItem of house.data">
+        <div class="card" style="width: 18rem;">
+          <img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg"
+               class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">
+              Name: {{ houseItem.name }}
+            </p>
+            <label>
+              Address: {{houseItem.address}}
+            </label>
+            <div id="priceHouseItem"> Price: {{houseItem.price}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<router-outlet></router-outlet>
