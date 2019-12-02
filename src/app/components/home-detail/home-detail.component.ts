@@ -19,6 +19,7 @@ export class HomeDetailComponent implements OnInit {
   id: number;
   houseName: string;
   categoryHouse: CategoryHouse;
+
   // formCommentCreate = new FormGroup({
   //   commentInput: new FormControl('')
   // });
@@ -42,7 +43,7 @@ export class HomeDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.houseId, this.token.getUserId());
+    // console.log(this.houseId, this.token.getUserId());
     this.getHouseId();
 
     this.info = {

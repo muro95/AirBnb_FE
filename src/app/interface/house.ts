@@ -1,23 +1,17 @@
 import {CategoryHouse} from './category-house';
+import {DataList} from './dataList';
 
-export interface House {
+
+export class House {
   // success: boolean;
   // message: string;
-  // data: {
-  //   id: string,
-  //   name: string;
-  //   catName: string;
-  //   userName: string;
-  //   userId: string;
-  // };
-  id?: string;
-  houseName: string;
-  categoryHouse?: CategoryHouse;
-  address: string;
-  bedroomNumber: string;
-  bathroomNumber: string;
-  description: string;
-  price: string;
-  area: string;
+  private _data: Array<DataList>;
 
+  get data(): Array<DataList> {
+    return this._data;
+  }
+
+  set data(value: Array<DataList>) {
+    this._data = value;
+  }
 }

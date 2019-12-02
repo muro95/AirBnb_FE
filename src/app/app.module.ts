@@ -16,6 +16,7 @@ import { HomeDetailComponent } from './components/home-detail/home-detail.compon
 
 
 
+
 const routes: Routes = [
   {
     path: '', component: HomeComponent
@@ -31,7 +32,8 @@ const routes: Routes = [
     UserComponent,
     PmComponent,
     AdminComponent,
-    HomeDetailComponent
+    HomeDetailComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -8,13 +8,14 @@ import {House} from '../interface/house';
   providedIn: 'root'
 })
 export class HouseService {
+
   private readonly API_URL = 'http://localhost:8080/api/';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  public getList(): Observable<House[]> {
-    return this.httpClient.get<House[]>('http://localhost:8080/api/houses');
+  public getList(): Observable<House> {
+    return this.httpClient.get<House>(this.API_URL + 'houses');
   }
 
   public getHouseId(id: number): Observable<House> {

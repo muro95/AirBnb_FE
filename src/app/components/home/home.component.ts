@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {House} from '../../interface/house';
 import {HouseService} from '../../services/house.service';
+import {Data} from '@angular/router';
+import {DataList} from '../../interface/dataList';
 
 
 @Component({
@@ -12,7 +14,8 @@ import {HouseService} from '../../services/house.service';
 export class HomeComponent implements OnInit {
   private info: any;
 
-  houseList: House[];
+   house: House;
+
 
   searchAddress = '';
 
@@ -39,7 +42,8 @@ export class HomeComponent implements OnInit {
 
   private getHouseList() {
     this.houseService.getList().subscribe(result => {
-      this.houseList = result;
+      this.house = result;
+      console.log('>>> house list:' + JSON.stringify(this.house));
     });
   }
 }
