@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../auth/auth.service';
 import {SignUpInfo} from '../../auth/sigup-info';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,8 +18,10 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   registerForm: FormGroup;
+  submitted = false;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
   }
 
   ngOnInit() {
@@ -28,6 +31,10 @@ export class RegisterComponent implements OnInit {
       username: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+  }
+
+  get f() {
+    return this.registerForm.controls;
   }
 
   onSubmit() {
@@ -42,14 +49,19 @@ export class RegisterComponent implements OnInit {
     this.authService.signUp(this.signupInfo).subscribe(
       data => {
         console.log(data);
-        this.isSignedUp = true;
+        this.isSignedUp = true;    this.submitted = true;
         this.isSignUpFailed = false;
       },
       error => {
         console.log(error);
         this.errorMessage = error.error.message;
         this.isSignUpFailed = true;
-      }
-    );
+      });
+    this.router.navigate(['/login']);
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    alert('SUCCESS!! :-)');
   }
 }

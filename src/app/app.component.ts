@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {TokenStorageService} from './auth/token-storage.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class AppComponent {
   title = 'Case-Study';
   private info: any;
 
-  constructor(private token: TokenStorageService) { }
+  constructor(private token: TokenStorageService, private router: Router) { }
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
@@ -25,7 +26,8 @@ export class AppComponent {
 
   logout() {
     this.token.signOut();
-    window.location.reload();
+    // window.location.reload();
+    this.router.navigateByUrl('/home');
   }
 }
 

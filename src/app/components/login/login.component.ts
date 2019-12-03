@@ -3,6 +3,7 @@ import {AuthService} from '../../auth/auth.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {AuthLoginInfo} from '../../auth/login-infor';
 import {Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
   form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
@@ -23,6 +25,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6)
+      ])
+    });
     if (this.tokenStorage.getToken()) {
       console.log('token_:' + this.tokenStorage.getToken());
       this.isLoggedIn = true;

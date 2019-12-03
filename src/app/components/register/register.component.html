@@ -110,40 +110,44 @@
     <form class="register-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <label class="btn btn-light  ">
         <h2 style="text-align: center;">Register</h2>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Name</label>
-          <input type="text" class="form-control" name="name" [(ngModel)]="form.name"
+        <div class="form-group ">
+          <label >Name</label>
+          <input  type="text" class="form-control" name="name" [(ngModel)]="form.name"
                  #name="ngModel" required id="exampleInputName" aria-describedby="Name"
-                 placeholder="User Name"
-          >
+                 placeholder="User Name">
+          <div  *ngIf="f.submitted && name.invalid">
+            <div class="displayErrorMessage" *ngIf="name.errors.required">Name is required</div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Email"
-                 name="email" [(ngModel)]="form.email"
-                 placeholder="@email">
-          <small id="emailHelp" class="form-text text-muted">
-            Enter an unregistered email.
-          </small>
+          <label >Email</label>
+          <input placeholder="Email" type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
+          <div  *ngIf="f.submitted && email.invalid">
+            <div class="displayErrorMessage" *ngIf="email.errors.required">Email is required</div>
+            <div class="displayErrorMessage" *ngIf="email.errors.email">Email must be a valid email address</div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">User Name</label>
+          <label>Username</label>
           <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
-                 id="exampleInputUserName" aria-describedby="User Name"
-                 placeholder="User Name"
+                 placeholder="Username"
                  required>
-          <small id="userHelp" class="form-text text-muted">
-            We will never share your user name with anyone else.
-          </small>
+          <div *ngIf="f.submitted && username.invalid">
+            <div class="displayErrorMessage" *ngIf="username.errors.required">Username is required</div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label>Password</label>
           <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
                  required minlength="6"
                  id="exampleInputPassword1" placeholder="Password">
+          <div  *ngIf="f.submitted && password.invalid">
+            <div class="displayErrorMessage" *ngIf="password.errors.required">Password is required</div>
+            <div class="displayErrorMessage" *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
         </div>
         <div id="btnRegister">
-        <button type="submit" class="btn btn-primary "  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Register</button>
+        <button type="submit" class="btn btn-primary "  ><i class="fas fa-sign-in-alt"></i> Register</button>
         </div>
 <!--        <button class="btn btn-success btn-siginin-signup" type="submit"><i class="fas fa-sign-in-alt"></i> Sign up-->
 <!--        </button>-->

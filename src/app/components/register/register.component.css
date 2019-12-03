@@ -43,3 +43,7 @@
  margin: 10px;
 }
 
+.displayErrorMessage{
+  color: darkslategray;
+  font-weight: bold;
+}
