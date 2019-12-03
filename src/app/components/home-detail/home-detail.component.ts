@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {House} from '../../interface/house-list/house';
+import {House} from '../../interface/house/house';
 import {CategoryHouse} from '../../interface/category-house';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HouseService} from '../../services/house.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
+import {HouseDetails} from '../../interface/house/houseDetails';
+import {DataHouseDetails} from '../../interface/house-details/dataHouseDetails';
 
 @Component({
   selector: 'app-home-detail',
@@ -15,10 +17,10 @@ import {TokenStorageService} from '../../auth/token-storage.service';
 export class HomeDetailComponent implements OnInit {
   private houseId: string;
   userId: string;
-  house: House;
+  house: HouseDetails;
   id: number;
   houseName: string;
-  categoryHouse: CategoryHouse;
+
 
   // formCommentCreate = new FormGroup({
   //   commentInput: new FormControl('')
@@ -54,9 +56,10 @@ export class HomeDetailComponent implements OnInit {
   }
 
   getHouseId() {
-    const id = +this.activatedRoute.snapshot.paramMap.get('houseId');
+    const id = +this.activatedRoute.snapshot.paramMap.get('id');
     this.houseService.getHouseId(this.id).subscribe(result => {
       this.house = result;
+      console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
     }, error => {
       console.log(error);
     });

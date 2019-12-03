@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {HomeDetailComponent} from './components/home-detail/home-detail.component';
 import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
+import {RegisterHostComponent} from './components/register-host/register-host.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'register-host',
+    component: RegisterHostComponent
   },
   {
     path: 'home/:houseId/:houseName',

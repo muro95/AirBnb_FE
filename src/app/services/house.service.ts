@@ -1,7 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {House} from '../interface/house-list/house';
+import {House} from '../interface/house/house';
+import {DataHouseList} from '../interface/house-list/dataHouseList';
+import {HouseDetails} from '../interface/house/houseDetails';
+import {DataHouseDetails} from '../interface/house-details/dataHouseDetails';
 
 
 @Injectable({
@@ -18,7 +21,8 @@ export class HouseService {
     return this.httpClient.get<House>(this.API_URL + 'houses');
   }
 
-  public getHouseId(id: number): Observable<House> {
-    return this.httpClient.get<House>(this.API_URL + 'houses2/' + id);
+  public getHouseId(id: number): Observable<HouseDetails> {
+    return this.httpClient.get<HouseDetails>(this.API_URL + 'houses2/' + id);
   }
+
 }

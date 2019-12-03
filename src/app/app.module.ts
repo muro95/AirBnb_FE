@@ -14,7 +14,8 @@ import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeDetailComponent } from './components/home-detail/home-detail.component';
 import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
+import { RegisterHostComponent } from './components/register-host/register-host.component';
 
 
 
@@ -36,9 +37,12 @@ const routes: Routes = [
     AdminComponent,
     HomeDetailComponent,
     HomeListForGuestComponent,
+    RegisterHostComponent,
 
   ],
   imports: [
+
+    NgxPaginationModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {JwtResponse} from './jwt-response';
 import {SignUpInfo} from './sigup-info';
 import {Router} from '@angular/router';
+import {SigupHostInfo} from './sigup-host-info';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,6 +17,7 @@ const httpOptions = {
 export class AuthService {
   private loginUrl = 'http://localhost:8080/api/auth/signin';
   private signupUrl = 'http://localhost:8080/api/auth/signup';
+  private signUpHostUrl = 'http://localhost:8080/api/auth/host/signup';
 
   constructor(private http: HttpClient) {
   }
@@ -26,5 +28,9 @@ export class AuthService {
 
   signUp(info: SignUpInfo): Observable<string> {
     return this.http.post<string>(this.signupUrl, info, httpOptions);
+  }
+
+  signUpHost(info: SigupHostInfo): Observable<string> {
+    return this.http.post<string>(this.signUpHostUrl, info, httpOptions);
   }
 }

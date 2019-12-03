@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {House} from '../../interface/house-list/house';
+import {House} from '../../interface/house/house';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {HouseService} from '../../services/house.service';
 
