@@ -1,4 +1,4 @@
-import {DataHouseDetails} from '../house-details/dataHouseDetails';
+import {DataHouseDetails} from './dataHouseDetails';
 
 export class HouseDetails {
   // tslint:disable-next-line:variable-name

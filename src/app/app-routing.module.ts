@@ -6,6 +6,7 @@ import {NgModule} from '@angular/core';
 import {HomeDetailComponent} from './components/home-detail/home-detail.component';
 import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
 import {RegisterHostComponent} from './components/register-host/register-host.component';
+import {AddHouseComponent} from './components/add-house/add-house.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'home/house-list-for-guest',
     component: HomeListForGuestComponent
+  },
+  {
+    path: 'home/add-house',
+    component: AddHouseComponent
   }
 ];
 

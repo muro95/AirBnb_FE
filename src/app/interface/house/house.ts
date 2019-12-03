@@ -1,5 +1,5 @@
 import {DataHouseList} from '../house-list/dataHouseList';
-import {DataHouseDetails} from '../house-details/dataHouseDetails';
+import {DataHouseDetails} from '../../components/home-detail/house-details/dataHouseDetails';
 
 
 export class House {
