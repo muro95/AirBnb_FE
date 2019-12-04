@@ -1,0 +1,19 @@
+.navbar-header {
+  cursor: pointer;
+}
+.search-header {
+  position: relative;
+}
+.fa-search {
+  position: absolute;
+  top: 40%;
+}
+.form-control {
+  padding-left: 6%;
+}
+#navbarSupportedContent-555{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
