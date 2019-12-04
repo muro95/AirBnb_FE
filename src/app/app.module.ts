@@ -17,6 +17,7 @@ import {HomeListForGuestComponent} from './components/home-list-for-guest/home-l
 import {NgxPaginationModule} from 'ngx-pagination';
 import { RegisterHostComponent } from './components/register-host/register-host.component';
 import {AddHouseComponent} from './components/add-house/add-house.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -39,7 +40,8 @@ const routes: Routes = [
     HomeDetailComponent,
     HomeListForGuestComponent,
     RegisterHostComponent,
-    AddHouseComponent
+    AddHouseComponent,
+    FooterComponent
   ],
   imports: [
 

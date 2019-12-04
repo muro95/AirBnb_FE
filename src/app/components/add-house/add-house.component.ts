@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HouseService} from '../../services/house.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {TokenStorageService} from '../../auth/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-house',
@@ -13,7 +14,7 @@ export class AddHouseComponent implements OnInit {
   isSuccess = false;
 
 
-  constructor(private houseService: HouseService, private token: TokenStorageService) {
+  constructor(private houseService: HouseService, private token: TokenStorageService, private router: Router) {
   }
 
   houseForm: FormGroup;
@@ -42,7 +43,7 @@ export class AddHouseComponent implements OnInit {
     const house = this.houseForm.value;
     this.houseService.addHouse(house).subscribe(result => {
       this.isSuccess = true;
-
+      this.router.navigate(['/home/house-list-for-guest']);
     });
   }
 

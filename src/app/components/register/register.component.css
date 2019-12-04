@@ -44,6 +44,8 @@
 }
 
 .displayErrorMessage{
-  color: darkslategray;
-  font-weight: bold;
+  color: red;
+  font-weight: 100;
+  font-family: Dialog;
+  padding-top: 2%;
 }
