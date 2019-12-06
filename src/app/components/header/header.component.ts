@@ -8,6 +8,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  private roles: string[];
+  private authority: string;
+
   private info: any;
 
   constructor(private token: TokenStorageService, private router: Router) { }
@@ -19,6 +22,20 @@ export class HeaderComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
     console.log('token from Browser:' + this.info.token);
+    if (this.token.getToken()) {
+      this.roles = this.token.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_HOST') {
+          this.authority = 'host';
+          return false;
+        } else if (role === 'ROLE_PM') {
+          this.authority = 'pm';
+          return false;
+        }
+        this.authority = 'user';
+        return true;
+      });
+    }
   }
 
   logout() {
