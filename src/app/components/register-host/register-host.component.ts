@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SignUpInfo} from '../../auth/sigup-info';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../auth/auth.service';
+import {SigupHostInfo} from '../../auth/sigup-host-info';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-host',
@@ -10,12 +12,14 @@ import {AuthService} from '../../auth/auth.service';
 })
 export class RegisterHostComponent implements OnInit {
   form: any = {};
-  signupInfo: SignUpInfo;
+  signupHostInfo: SigupHostInfo;
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
   registerForm: FormGroup;
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
+  }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -25,16 +29,17 @@ export class RegisterHostComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
+
   onSubmit() {
     console.log(this.form);
 
-    this.signupInfo = new SignUpInfo(
+    this.signupHostInfo = new SigupHostInfo(
       this.form.name,
       this.form.username,
       this.form.email,
       this.form.password);
 
-    this.authService.signUpHost(this.signupInfo).subscribe(
+    this.authService.signUpHost(this.signupHostInfo).subscribe(
       data => {
         console.log(data);
         this.isSignedUp = true;
@@ -46,5 +51,6 @@ export class RegisterHostComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+    this.router.navigate(['/login']);
   }
 }
