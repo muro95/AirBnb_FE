@@ -44,13 +44,20 @@ export class RegisterHostComponent implements OnInit {
         console.log(data);
         this.isSignedUp = true;
         this.isSignUpFailed = false;
+
       },
       error => {
         console.log(error);
         this.errorMessage = error.error.message;
         this.isSignUpFailed = true;
+
       }
     );
+    if (this.isSignUpFailed) {
+      alert('Đăng ký thất bại.');
+    } else {
+      alert('Đăng ký thành công.');
+    }
     this.router.navigate(['/login']);
   }
 }

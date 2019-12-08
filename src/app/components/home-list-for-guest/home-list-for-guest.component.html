@@ -1,14 +1,18 @@
 <h1> List of houses</h1>
 <div class="container">
 
-
   <div *ngIf="house">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;
+       Search">
+    </div>
     <div class="row">
+
       <div class="col-sm-4"
-           *ngFor="let houseItem of house.data; index as i ">
-        <div class="card" style="width: 18rem;"  routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">
+           *ngFor="let houseItem of house.data | filter: searchText| paginate: {itemsPerPage: 2, currentPage: pageActual}; index as i">
+        <div class="card" style="width: 18rem;" routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">
           <img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg"
-               class="card-img-top" alt="...">
+               class="card-img-top" alt="">
           <div class="card-body">
             <p class="card-text">
               Name: {{ houseItem.name }}
@@ -23,6 +27,9 @@
     </div>
   </div>
 
+  <div style="text-align: center">
+    <pagination-controls (pageChange)="pageActual = $event"
+    ></pagination-controls>
+  </div>
 </div>
-
 <router-outlet></router-outlet>

@@ -14,11 +14,13 @@ import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeDetailComponent } from './components/home-detail/home-detail.component';
 import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+
 import { RegisterHostComponent } from './components/register-host/register-host.component';
 import {AddHouseComponent} from './components/add-house/add-house.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 
 
@@ -46,7 +48,7 @@ const routes: Routes = [
     HeaderComponent
   ],
   imports: [
-
+    Ng2SearchPipeModule,
     NgxPaginationModule,
     BrowserModule,
     AppRoutingModule,

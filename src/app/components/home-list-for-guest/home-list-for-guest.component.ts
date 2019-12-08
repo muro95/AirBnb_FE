@@ -10,12 +10,18 @@ import {HouseService} from '../../services/house.service';
 })
 export class HomeListForGuestComponent implements OnInit {
   private info: any;
-
+// pagination setting
+  pageActual = 1;
+  maxSize = 3;
+  searchText;
   house: House;
 
+
   constructor(private token: TokenStorageService,
-              private houseService: HouseService) {
+              private houseService: HouseService,
+  ) {
   }
+
 
   ngOnInit() {
     this.getHouseList();
