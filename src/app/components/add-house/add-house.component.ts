@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {HouseService} from '../../services/house.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {Router} from '@angular/router';
+import {House} from '../../interface/house/house';
+import {DataCreatedHouse} from './data-create-house/dataCreatedHouse';
+import {CreateHouse} from './data-create-house/createHouse';
 
 @Component({
   selector: 'app-add-house',
@@ -10,11 +13,17 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-house.component.css']
 })
 export class AddHouseComponent implements OnInit {
-  private info: any;
+  private info: any = {};
   isSuccess = false;
+  form: any = {};
+  house: CreateHouse;
+  submitted = false;
 
-
-  constructor(private houseService: HouseService, private token: TokenStorageService, private router: Router) {
+  constructor(private houseService: HouseService,
+              private token: TokenStorageService,
+              private router: Router,
+              private formBuilder: FormBuilder
+  ) {
   }
 
   houseForm: FormGroup;
@@ -26,8 +35,8 @@ export class AddHouseComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
     console.log('token from Browser:' + this.info.token);
-    this.houseForm = new FormGroup({
-      houseName: new FormControl(''),
+    this.houseForm = this.formBuilder.group({
+      houseName: new FormControl('', Validators.required),
       category: new FormControl(''),
       address: new FormControl(''),
       bedroomNumber: new FormControl(''),
@@ -39,12 +48,29 @@ export class AddHouseComponent implements OnInit {
     });
   }
 
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.houseForm.controls;
+  }
+
   onSubmit() {
+    this.submitted = true;
+
     const house = this.houseForm.value;
-    this.houseService.addHouse(house).subscribe(result => {
-      this.isSuccess = true;
-      this.router.navigate(['/home/house-list-for-guest']);
-    });
+
+    // stop here if form is invalid
+    if (this.houseForm.invalid) {
+      return this.houseService.addHouse(house).subscribe(result => {
+        this.isSuccess = false;
+        // this.router.navigate(['/home/house-list-for-guest']);
+      });
+    } else {
+      this.houseService.addHouse(house).subscribe(result => {
+        this.isSuccess = true;
+      });
+    }
+
+    alert('SUCCESS!! :-)');
   }
 
 }
