@@ -33,6 +33,9 @@
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/register-host">Resort</label>
         </li>
+        <li class="nav-item" *ngIf="authority === 'user'">
+          <label class="nav-link" (click)="logout()">Logout</label>
+        </li>
 
         <li class="nav-item" *ngIf="authority === 'host'">
           <label class="nav-link" routerLink="/home/house-list-for-guest">House List</label>
@@ -53,7 +56,7 @@
           <label class="nav-link" routerLink="/register">Messages</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/register">Help</label>
+          <label class="nav-link" (click)="logout()">Logout</label>
         </li>
         <li class="nav-item dropdown">
           <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button"
@@ -67,9 +70,11 @@
                   aria-expanded="false" *ngIf="!authority">Account
           </button>
           <div class="dropdown-menu" id="dropdownMenu">
-            <a class="dropdown-item" routerLink="/information">Information</a>
             <a class="dropdown-item" routerLink="/login">Login</a>
-            <a class="dropdown-item" (click)="logout()">Logout</a>
+            <a class="dropdown-item" routerLink="/information">Profile</a>
+            <a class="dropdown-item" routerLink="/login">Account</a>
+            <a class="dropdown-item" routerLink="/login">Invite Friends</a>
+<!--            <a class="dropdown-item" (click)="logout()">Logout</a>-->
           </div>
         </li>
         <!--          <li class="nav-item dropdown" *ngIf="authority ==='user'&&info.username">-->
