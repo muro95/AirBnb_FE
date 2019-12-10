@@ -1,16 +1,5 @@
-
 .nav-item {
   font-weight: bold;
-}
-
-.form-control {
-  position: relative;
-}
-
-.fa-search {
-  position: absolute;
-  left: 100px;
-  color: darkgrey;
 }
 
 .nav-item:hover {
@@ -39,4 +28,9 @@
 #logo{
   cursor: pointer;
 }
+
+.form-control::placeholder  {
+  font-family: FontAwesome;
+}
+
 

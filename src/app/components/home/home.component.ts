@@ -4,6 +4,7 @@ import {House} from '../../interface/house/house';
 import {HouseService} from '../../services/house.service';
 import {Data} from '@angular/router';
 import {DataHouseList} from '../../interface/house-list/dataHouseList';
+import {Info} from '../../interface/info';
 
 
 @Component({
@@ -12,7 +13,7 @@ import {DataHouseList} from '../../interface/house-list/dataHouseList';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private info: any;
+  private info: Info = {username: '', authorities: []};
 
    house: House;
 

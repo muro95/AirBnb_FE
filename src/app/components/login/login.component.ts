@@ -4,6 +4,7 @@ import {TokenStorageService} from '../../auth/token-storage.service';
 import {AuthLoginInfo} from '../../auth/login-infor';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {HeaderComponent} from '../header/header.component';
 
 
 @Component({
@@ -21,7 +22,10 @@ export class LoginComponent implements OnInit {
   private loginInfo: AuthLoginInfo;
   isSuccess = false;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) {
+  constructor(private authService: AuthService,
+              private tokenStorage: TokenStorageService,
+              private router: Router,
+              private navbar: HeaderComponent) {
   }
 
   ngOnInit() {
@@ -57,6 +61,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
+        this.navbar.ngOnInit();
         // this.reloadPage();
         this.router.navigateByUrl('/');
       },
