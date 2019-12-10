@@ -62,5 +62,26 @@
 .content-middle-2 p {
   text-align: center;
 }
+.airbnb-plus {
+  margin-left: 5%;
+  margin-top: 3%;
+}
+.airbnb-plus p {
+  margin-bottom: 2%;
+}
 
-
+.btn-explore-stay {
+ left: 40%;
+  position: absolute;
+  bottom: 18%;
+  background-color: white;
+  border-radius: 10px;
+}
+.btn-explore-stay a {
+  font-weight: 600;
+  border-radius: 10px;
+}
+.btn {
+  width: 150px;
+  height: 50px;
+}
