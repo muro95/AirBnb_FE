@@ -10,28 +10,43 @@
 <!--</div>-->
 
 
+<<<<<<< HEAD
 <div *ngIf="info.token; else loggedOut">
   <h5 class="text-primary">Your Information</h5>
   <p>
-    <strong>Id: </strong> {{info.idUser}}<br/>
+
     <strong>Username:</strong> {{info.username}}<br/>
     <strong>Roles:</strong> {{info.authorities}}<br/>
     <strong>Token:</strong> {{info.token}}
   </p>
   <button class="btn btn-secondary" (click)="logout()">Logout</button>
 </div>
+=======
+<!--<div *ngIf="info.token; else loggedOut">-->
+<!--  <h5 class="text-primary">Your Information</h5>-->
+<!--  <p>-->
+<!--    <strong>Username:</strong> {{info.username}}<br/>-->
+<!--    <strong>Roles:</strong> {{info.authorities}}<br />-->
+<!--    <strong>Token:</strong> {{info.token}}-->
+<!--  </p>-->
+<!--  <button class="btn btn-secondary" (click)="logout()">Logout</button>-->
+<!--</div>-->
+>>>>>>> 01bc7a1848db7bdded9fde94a9e8b3ee34868803
 
-<ng-template #loggedOut>
-  Please login.
-</ng-template>
+<!--<ng-template #loggedOut>-->
+<!--  Please login.-->
+<!--</ng-template>-->
 
 <div class="bd-example">
+<<<<<<< HEAD
   <!--  <div class="greeting section"><div class="title mb&#45;&#45;12"><h3>Chào mừng đến với Luxstay!</h3></div>-->
   <!--    <p class="mb&#45;&#45;6">Đặt chỗ ở, homestay, cho thuê xe, trải nghiệm và nhiều hơn nữa trên Luxstay</p>-->
   <!--    <p><a routerLink="/login" class="">Đăng nhập</a> <span class="text-lowercase">Hoặc</span>-->
   <!--      <a routerLink="/register" class="">Đăng ký</a>-->
   <!--    để trải nghiệm !-->
   <!--  </p></div>-->
+=======
+>>>>>>> 01bc7a1848db7bdded9fde94a9e8b3ee34868803
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -44,6 +59,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h5>INTRODUCING</h5>
           <p>Cooking on Airbnb Experiences</p>
+<<<<<<< HEAD
         </div>
       </div>
       <div class="carousel-item">
@@ -60,6 +76,24 @@
           <p>Stays on Airbnb Experiences</p>
         </div>
       </div>
+=======
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/images/moutain1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>INTRODUCING</h5>
+          <p>Moutain on Airbnb Experiences</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../assets/images/original.jpg" style="height: 560px" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>INTRODUCING</h5>
+          <p>Stays on Airbnb Experiences</p>
+        </div>
+      </div>
+>>>>>>> 01bc7a1848db7bdded9fde94a9e8b3ee34868803
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -79,6 +113,7 @@
       <div class="row no-gutters col-md-12">
         <div class="col-md-4">
           <img src="../assets/images/bedroom.jpg" class="card-img" alt="">
+<<<<<<< HEAD
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -97,6 +132,26 @@
             <h5 class="card-title">Experiences</h5>
           </div>
         </div>
+=======
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Stays</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <div class="row no-gutters col-md-12">
+        <div class="col-md-4">
+          <img src="../assets/images/cookies-300x214.jpg" class="card-img" alt="">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Experiences</h5>
+          </div>
+        </div>
+>>>>>>> 01bc7a1848db7bdded9fde94a9e8b3ee34868803
       </div>
     </div>
     <div class="card col-md-3">
@@ -164,7 +219,27 @@
           Show all adventures
         </p>
       </div>
+<<<<<<< HEAD
     </div>
   </div>
 </div>
+=======
+    </div>
+  </div>
+</div>
+  <div class="airbnb-plus-stay">
+    <div class="row">
+      <div class="card-body airbnb-plus col-md-12">
+        <h3>Airbnb Plus places to stay</h3>
+        <p>A selection of places to stay verified for quality and design</p>
+        <div class="col-md-11 img-explore-stay">
+          <img src="../assets/images/Capture111.PNG" class="card-img-top" alt="...">
+        </div>
+        <div class="btn-explore-stay">
+          <a href="#" class="btn btn-outline-primary">EXPLORE STAY <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 01bc7a1848db7bdded9fde94a9e8b3ee34868803
 <router-outlet></router-outlet>

@@ -34,11 +34,13 @@
 }
 
 .font-weight-normal {
-  font-family: inherit;
+  font-family: "Yu Gothic UI";
+  font-size: 35px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: black;
   font-weight: 900;
+  text-align: center;
 }
 
 #logreg-forms form {
@@ -101,17 +103,12 @@
 
 #logreg-forms .facebook-btn {
   background-color: #3C589C;
-  width: 200px
+  width: 210px
 }
 
 #logreg-forms .google-btn {
   background-color: #DF4B3B;
-  width: 220px
-}
-
-#logreg-forms .google-btn {
-  background-color: #DF4B3B;
-  width: 220px
+  width: 210px
 }
 
 #logreg-forms .form-reset, #logreg-forms .form-signup {
