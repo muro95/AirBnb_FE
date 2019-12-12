@@ -40,6 +40,4 @@ export class HomeListForGuestComponent implements OnInit {
     });
   }
 
-
-
 }

@@ -10,13 +10,13 @@ export class  DataHouseDetails {
   private _price: string; // tslint:disable-next-line:variable-name
   private _area: string; // tslint:disable-next-line:variable-name
   private _userName: string; // tslint:disable-next-line:variable-name
-  private _userId: string;
+  private _userId: number;
 
 
   constructor(id: number, name: string, catName: string,
               address: string, bedroomNumber: string,
               bathroomNumber: string, description: string,
-              price: string, area: string, userName: string, userId: string) {
+              price: string, area: string, userName: string, userId: number) {
     this._id = id;
     this._name = name;
     this._catName = catName;
@@ -111,11 +111,11 @@ export class  DataHouseDetails {
     this._userName = value;
   }
 
-  get userId(): string {
+  get userId(): number {
     return this._userId;
   }
 
-  set userId(value: string) {
+  set userId(value: number) {
     this._userId = value;
   }
 }

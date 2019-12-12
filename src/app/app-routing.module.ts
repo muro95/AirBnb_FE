@@ -27,7 +27,7 @@ const routes: Routes = [
     component: RegisterHostComponent
   },
   {
-    path: 'home/:houseId/:houseName',
+    path: 'home/:houseId/:aUserId/:houseName',
     component: HomeDetailComponent
   },
   {

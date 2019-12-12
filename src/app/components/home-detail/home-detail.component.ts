@@ -17,6 +17,7 @@ import {DataHouseDetails} from './house-details/dataHouseDetails';
 export class HomeDetailComponent implements OnInit {
   private houseId: string;
   userId: string;
+  aUserId: number;
   house: HouseDetails;
   id: number;
   houseName: string;
@@ -39,6 +40,7 @@ export class HomeDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.id = params.houseId;
       this.houseName = params.houseName;
+      this.aUserId = params.aUserId;
     });
     this.userId = this.token.getUserId();
     this.tokenJWT = this.token.getToken();
@@ -47,7 +49,6 @@ export class HomeDetailComponent implements OnInit {
   ngOnInit() {
     // console.log(this.houseId, this.token.getUserId());
     this.getHouseId();
-
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
@@ -55,9 +56,11 @@ export class HomeDetailComponent implements OnInit {
     };
   }
 
+
   getHouseId() {
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.houseService.getHouseId(this.id).subscribe(result => {
+    const aUserId = +this.activatedRoute.snapshot.paramMap.get('aUserId');
+    this.houseService.getHouseId(this.id, this.aUserId).subscribe(result => {
       this.house = result;
       console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
     }, error => {

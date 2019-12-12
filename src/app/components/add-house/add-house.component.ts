@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {House} from '../../interface/house/house';
 import {DataCreatedHouse} from './data-create-house/dataCreatedHouse';
 import {CreateHouse} from './data-create-house/createHouse';
+import {HostDetail} from '../../interface/host/hostDetail';
 
 @Component({
   selector: 'app-add-house',
@@ -18,6 +19,7 @@ export class AddHouseComponent implements OnInit {
   form: any = {};
   house: CreateHouse;
   submitted = false;
+  host: HostDetail;
 
   constructor(private houseService: HouseService,
               private token: TokenStorageService,
@@ -29,6 +31,7 @@ export class AddHouseComponent implements OnInit {
   houseForm: FormGroup;
 
   ngOnInit() {
+
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
@@ -44,7 +47,7 @@ export class AddHouseComponent implements OnInit {
       description: new FormControl(''),
       price: new FormControl(''),
       area: new FormControl(''),
-      user: new FormControl(''),
+      user: new FormControl('')
     });
   }
 
@@ -53,7 +56,9 @@ export class AddHouseComponent implements OnInit {
     return this.houseForm.controls;
   }
 
+
   onSubmit() {
+
     this.submitted = true;
 
     const house = this.houseForm.value;
@@ -62,7 +67,7 @@ export class AddHouseComponent implements OnInit {
     if (this.houseForm.invalid) {
       return this.houseService.addHouse(house).subscribe(result => {
         this.isSuccess = false;
-        // this.router.navigate(['/home/house-list-for-guest']);
+
       });
     } else {
       this.houseService.addHouse(house).subscribe(result => {
@@ -71,6 +76,7 @@ export class AddHouseComponent implements OnInit {
     }
 
     alert('SUCCESS!! :-)');
+    // this.router.navigate(['/home/house-list-for-guest']);
   }
 
 }

@@ -10,7 +10,7 @@
 
       <div class="col-sm-4"
            *ngFor="let houseItem of house.data   | filter: searchText| paginate: {itemsPerPage: 9, currentPage: pageActual}; index as i">
-        <div class="card" style="width: 18rem;" routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">
+        <div class="card" style="width: 18rem;" routerLink="/home/{{houseItem.id}}/{{houseItem.userId}}/{{houseItem.name}}">
           <img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg"
                class="card-img-top" alt="">
           <div class="card-body">

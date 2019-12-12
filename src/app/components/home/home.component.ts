@@ -14,7 +14,7 @@ import {DataHouseList} from '../../interface/house-list/dataHouseList';
 export class HomeComponent implements OnInit {
   private info: any;
 
-   house: House;
+  house: House;
 
 
   searchAddress = '';
@@ -28,11 +28,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getHouseList();
     this.info = {
+      idUser: this.token.getUserId(),
       token: this.token.getToken(),
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
     console.log('token from Browser:' + this.info.token);
+    console.log('user id : ' + this.info.idUser);
   }
 
   logout() {
