@@ -7,6 +7,7 @@ import {HomeDetailComponent} from './components/home-detail/home-detail.componen
 import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
 import {RegisterHostComponent} from './components/register-host/register-host.component';
 import {AddHouseComponent} from './components/add-house/add-house.component';
+import {BookingComponent} from './components/booking/booking.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'home/add-house',
     component: AddHouseComponent
+  },
+  {
+    path: 'booking',
+    component: BookingComponent
   }
 ];
 
