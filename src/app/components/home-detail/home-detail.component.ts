@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {House} from '../../interface/house/house';
+import {House} from '../home-list-for-guest/house-list/house';
 import {CategoryHouse} from '../../interface/category-house';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';

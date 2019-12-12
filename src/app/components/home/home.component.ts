@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from '../../auth/token-storage.service';
-import {House} from '../../interface/house/house';
+import {House} from '../home-list-for-guest/house-list/house';
 import {HouseService} from '../../services/house.service';
 import {Data} from '@angular/router';
-import {DataHouseList} from '../../interface/house-list/dataHouseList';
+import {DataHouseList} from '../home-list-for-guest/house-list/dataHouseList';
 import {Info} from '../../interface/info';
 
 

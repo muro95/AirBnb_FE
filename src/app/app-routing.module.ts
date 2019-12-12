@@ -8,6 +8,7 @@ import {HomeListForGuestComponent} from './components/home-list-for-guest/home-l
 import {RegisterHostComponent} from './components/register-host/register-host.component';
 import {AddHouseComponent} from './components/add-house/add-house.component';
 import {UserBookingComponent} from './components/user-booking/user-booking.component';
+import {ListHouseOfHostComponent} from './components/list-house-of-host/list-house-of-host.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'home/user-booking',
     component: UserBookingComponent
+  },
+  {
+    path: 'home/house-of-host',
+    component: ListHouseOfHostComponent
   }
 ];
 

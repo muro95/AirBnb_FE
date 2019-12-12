@@ -3,7 +3,7 @@ import {HouseService} from '../../services/house.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {Router} from '@angular/router';
-import {House} from '../../interface/house/house';
+import {House} from '../home-list-for-guest/house-list/house';
 import {DataCreatedHouse} from './data-create-house/dataCreatedHouse';
 import {CreateHouse} from './data-create-house/createHouse';
 
@@ -47,6 +47,7 @@ export class AddHouseComponent implements OnInit {
       area: new FormControl(''),
       user: this.token.getUserId(),
     });
+    console.log('>>>>get user now:' + this.token.getUserId());
   }
 
   // convenience getter for easy access to form fields

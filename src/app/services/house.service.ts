@@ -1,12 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {House} from '../interface/house/house';
-import {DataHouseList} from '../interface/house-list/dataHouseList';
+import {House} from '../components/home-list-for-guest/house-list/house';
+import {DataHouseList} from '../components/home-list-for-guest/house-list/dataHouseList';
 
 import {DataHouseDetails} from '../components/home-detail/house-details/dataHouseDetails';
 import {HouseDetails} from '../components/home-detail/house-details/houseDetails';
 import {DataCreatedHouse} from '../components/add-house/data-create-house/dataCreatedHouse';
+import {DataHouseListOfHost} from '../components/list-house-of-host/house-list-of-host/dataHouseListOfHost';
+import {HouseListOfHost} from '../components/list-house-of-host/house-list-of-host/houseListOfHost';
 
 
 @Injectable({
@@ -29,6 +31,10 @@ export class HouseService {
 
   public addHouse(house: DataCreatedHouse): Observable<DataCreatedHouse> {
     return this.httpClient.post<DataCreatedHouse>(this.API_URL + 'host/houses', house);
+  }
+
+  public getListHouseOfHost(): Observable<HouseListOfHost> {
+    return this.httpClient.get<HouseListOfHost>(this.API_URL + 'host/houses');
   }
 
 }
