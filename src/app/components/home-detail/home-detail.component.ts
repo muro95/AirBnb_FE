@@ -20,7 +20,8 @@ export class HomeDetailComponent implements OnInit {
   house: HouseDetails;
   id: number;
   houseName: string;
-
+  private roles: string[];
+  private authority: string;
 
   // formCommentCreate = new FormGroup({
   //   commentInput: new FormControl('')
@@ -51,8 +52,23 @@ export class HomeDetailComponent implements OnInit {
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
-      role: this.token.getAuthorities()
+      authorities: this.token.getAuthorities()
     };
+    console.log('token from Browser:' + this.info.token);
+    if (this.token.getToken()) {
+      this.roles = this.token.getAuthorities();
+      this.roles.every(role => {
+        if (role === 'ROLE_HOST') {
+          this.authority = 'host';
+          return false;
+        } else if (role === 'ROLE_PM') {
+          this.authority = 'pm';
+          return false;
+        }
+        this.authority = 'user';
+        return true;
+      });
+    }
   }
 
   getHouseId() {

@@ -22,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {OrderModule} from 'ngx-order-pipe';
+import { UserBookingComponent } from './components/user-booking/user-booking.component';
 
 
 
@@ -46,7 +47,8 @@ const routes: Routes = [
     RegisterHostComponent,
     AddHouseComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserBookingComponent
   ],
   imports: [
     Ng2SearchPipeModule,

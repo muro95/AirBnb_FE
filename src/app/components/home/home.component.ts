@@ -13,9 +13,9 @@ import {Info} from '../../interface/info';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private info: Info = {username: '', authorities: []};
-
-   house: House;
+  private info: Info;
+  userId: string;
+  house: House;
 
 
   searchAddress = '';
@@ -28,11 +28,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getHouseList();
+    this.userId = this.token.getUserId();
     this.info = {
+      id: this.token.getUserId(),
       token: this.token.getToken(),
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+    console.log('id current user: ' + this.info.id);
     console.log('token from Browser:' + this.info.token);
   }
 

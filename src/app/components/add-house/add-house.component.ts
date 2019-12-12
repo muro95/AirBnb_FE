@@ -30,6 +30,7 @@ export class AddHouseComponent implements OnInit {
 
   ngOnInit() {
     this.info = {
+      id: this.token.getUserId(),
       token: this.token.getToken(),
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
@@ -44,7 +45,7 @@ export class AddHouseComponent implements OnInit {
       description: new FormControl(''),
       price: new FormControl(''),
       area: new FormControl(''),
-      user: new FormControl(''),
+      user: this.token.getUserId(),
     });
   }
 
