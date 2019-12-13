@@ -12,51 +12,71 @@
         <input type="text"
                formControlName="houseName"
                class="form-control"
-               [ngClass]="{ 'is-invalid': submitted && f.houseName.errors }"/>
+               [ngClass]="{ 'is-invalid': submitted && f.houseName.errors }">
         <div *ngIf="submitted && f.houseName.errors" class="invalid-feedback">
           <div *ngIf="f.houseName.errors.required">House Name is required</div>
         </div>
       </div>
-      <!--      <div class="form-group">-->
-      <!--        <label for="exampleInputPassword1">Category: </label>-->
-      <!--        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Category"-->
-      <!--               formControlName="category"-->
-      <!--        >-->
-      <!--      </div>-->
-      <div class="form-group"
-           *ngFor="let category of "
-      >
 
+      <div *ngIf="category" class="form-group">
+        <label>
+          Category
+        </label>
+        <select
+          type="text" id="category"
+          name="category"
+          formControlName="category"
+          class="form-control">
+          <option *ngFor="let category of category.data" [value]="category.id">
+            {{category.name}}
+          </option>
+        </select>
       </div>
       <div class="form-group">
         <label>Address: </label>
-        <input type="text" class="form-control" placeholder="Address"
+        <input type="text"
+               class="form-control"
                formControlName="address"
-        >
+               [ngClass]="{ 'is-invalid': submitted && f.address.errors }"/>
+        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+          <div *ngIf="f.address.errors.required">Address is required</div>
+        </div>
       </div>
       <div class="form-group">
         <label>Bedroom Number: </label>
-        <input type="text" class="form-control" placeholder="Bedroom number"
+        <input type="text"
+               class="form-control"
                formControlName="bedroomNumber"
-        >
+               [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+        <div *ngIf="submitted && f.bedroomNumber.errors" class="invalid-feedback">
+          <div *ngIf="f.bedroomNumber.errors.required">Bedroom quantity is required</div>
+        </div>
       </div>
       <div class="form-group">
         <label>Bathroom Number: </label>
-        <input type="text" class="form-control" placeholder="bathroom number"
+        <input type="text"
+               class="form-control"
                formControlName="bathroomNumber"
-        >
+               [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+        <div *ngIf="submitted && f.bathroomNumber.errors" class="invalid-feedback">
+          <div *ngIf="f.bathroomNumber.errors.required">Bathroom quantity is required</div>
+        </div>
       </div>
       <div class="form-group">
         <label>Description: </label>
-        <input type="text" class="form-control" placeholder="Title"
-               formControlName="description"
-        >
+        <input type="text"
+               class="form-control"
+               formControlName="description">
       </div>
       <div class="form-group">
         <label>Price: </label>
-        <input type="text" class="form-control" placeholder="Title"
+        <input type="text"
+               class="form-control"
                formControlName="price"
-        >
+               [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+        <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+          <div *ngIf="f.price.errors.required">Price is required</div>
+        </div>
       </div>
       <!--  <div class="form-group">-->
       <!--    <label for="exampleInputPassword1">Area: </label>-->
@@ -64,13 +84,6 @@
       <!--           formControlName="area"-->
       <!--    >-->
       <!--  </div>-->
-      <div class="form-group">
-        <label>Price: </label>
-        <input type="text" class="form-control" placeholder="Title"
-               formControlName="user"
-        >
-      </div>
-
       <div class="form-group">
         <button class="btn btn-primary">Add</button>
       </div>

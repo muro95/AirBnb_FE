@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {House} from '../../user/home-list-for-guest/house-list/house';
 import {DataCreatedHouse} from './data-create-house/dataCreatedHouse';
 import {CreateHouse} from './data-create-house/createHouse';
+import {CategoryHouse} from '../../category-house/data-category/categoryHouse';
 
 @Component({
   selector: 'app-add-house',
@@ -17,7 +18,9 @@ export class AddHouseComponent implements OnInit {
   isSuccess = false;
   form: any = {};
   house: CreateHouse;
+  category: CategoryHouse;
   submitted = false;
+  categorySelected: number;
 
   constructor(private houseService: HouseService,
               private token: TokenStorageService,
@@ -29,6 +32,7 @@ export class AddHouseComponent implements OnInit {
   houseForm: FormGroup;
 
   ngOnInit() {
+    this.getCategoryList();
     this.info = {
       id: this.token.getUserId(),
       token: this.token.getToken(),
@@ -38,12 +42,12 @@ export class AddHouseComponent implements OnInit {
     console.log('token from Browser:' + this.info.token);
     this.houseForm = this.formBuilder.group({
       houseName: new FormControl('', Validators.required),
-      category: new FormControl(''),
-      address: new FormControl(''),
-      bedroomNumber: new FormControl(''),
-      bathroomNumber: new FormControl(''),
+      category: new FormControl(this.category),
+      address: new FormControl('', Validators.required),
+      bedroomNumber: new FormControl('', Validators.required),
+      bathroomNumber: new FormControl('', Validators.required),
       description: new FormControl(''),
-      price: new FormControl(''),
+      price: new FormControl('', Validators.required),
       area: new FormControl(''),
       user: this.token.getUserId(),
     });
@@ -53,6 +57,12 @@ export class AddHouseComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() {
     return this.houseForm.controls;
+  }
+
+  private getCategoryList() {
+    this.houseService.getListCategory().subscribe(result => {
+      this.category = result;
+    });
   }
 
   onSubmit() {
