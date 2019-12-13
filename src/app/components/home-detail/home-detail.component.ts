@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {House} from '../home-list-for-guest/house-list/house';
+import {House} from '../user/home-list-for-guest/house-list/house';
 import {CategoryHouse} from '../../interface/category-house';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
-import {HouseService} from '../../services/house.service';
+import {HouseService} from '../../services/house/house.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {HouseDetails} from './house-details/houseDetails';
 import {DataHouseDetails} from './house-details/dataHouseDetails';

@@ -20,18 +20,24 @@
             <a class="dropdown-item" routerLink="/home/add-house">Add House</a>
           </div>
         </li>
-
+        <li class="nav-item" *ngIf="authority === 'user'">
+          <label class="nav-link" routerLink="/home/category-list">Category House</label>
+        </li>
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/home/house-list-for-guest">View List House</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
-          <label class="nav-link" routerLink="/register-host">Booking</label>
+          <label class="nav-link" routerLink="/home/list-order-of-user">List Order</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/register-host">Home Stay</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/register-host">Resort</label>
+        </li>
+
+        <li class="nav-item" *ngIf="authority === 'host'">
+          <label class="nav-link" routerLink="/home/category-list">Category House</label>
         </li>
 
         <li class="nav-item" *ngIf="authority === 'host'">
@@ -126,7 +132,7 @@
 <!--          </div>-->
 <!--        </li>-->
 <!--        <li class="nav-item col-md-3">-->
-<!--          <a class="nav-link" routerLink="/register">Sign up</a>-->
+<!--          <a class="nav-link" routerLink="/register-user">Sign up</a>-->
 <!--        </li>-->
 <!--        <li class="nav-item dropdown">-->
 <!--          <a class="nav-link" routerLink="/login" tabindex="-1">Login</a>-->
@@ -153,7 +159,7 @@
 <!--        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">-->
 <!--          <ul class="navbar-nav mr-auto">-->
 <!--            <li class="nav-item col-md-4 navbar-airbnb">-->
-<!--              <a class="nav-link" routerLink="/register-host">Become host-->
+<!--              <a class="nav-link" routerLink="/register-user-host">Become host-->
 <!--                <span class="sr-only">(current)</span>-->
 <!--              </a>-->
 <!--            </li>-->
@@ -167,7 +173,7 @@
 <!--              </div>-->
 <!--            </li>-->
 <!--            <li class="nav-item col-3">-->
-<!--              <a class="nav-link" routerLink="/register">Sign up</a>-->
+<!--              <a class="nav-link" routerLink="/register-user">Sign up</a>-->
 <!--            </li>-->
 <!--            <li class="nav-item">-->
 <!--              <a class="nav-link" routerLink="/login">Login</a>-->
