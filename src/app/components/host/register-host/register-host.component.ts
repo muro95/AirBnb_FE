@@ -4,6 +4,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../auth/auth.service';
 import {SigupHostInfo} from '../../../auth/sigup-host-info';
 import {Router} from '@angular/router';
+import {AuthLoginInfo} from '../../../auth/login-infor';
+import {TokenStorageService} from '../../../auth/token-storage.service';
+import {HeaderComponent} from '../../header/header.component';
 
 @Component({
   selector: 'app-register-host',
@@ -12,13 +15,22 @@ import {Router} from '@angular/router';
 })
 export class RegisterHostComponent implements OnInit {
   form: any = {};
+  private loginInfo: AuthLoginInfo;
   signupHostInfo: SigupHostInfo;
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
   registerForm: FormGroup;
+  roles: string[] = [];
+  isLoggedIn = false;
+  isLoginFailed = false;
+  isSuccess = false;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
+  constructor(private authService: AuthService,
+              private formBuilder: FormBuilder,
+              private router: Router,
+              private tokenStorage: TokenStorageService,
+              private navbar: HeaderComponent) {
   }
 
   ngOnInit() {
@@ -58,6 +70,39 @@ export class RegisterHostComponent implements OnInit {
     } else {
       alert('Đăng ký thành công.');
     }
-    this.router.navigate(['/login']);
+    this.login();
+  }
+
+  login() {
+    console.log(this.form);
+
+    this.loginInfo = new AuthLoginInfo(
+      this.form.username,
+      this.form.password);
+// store to web browser;
+    this.authService.attemptAuth(this.loginInfo).subscribe(
+      responseJWT => {
+        console.log('get UserName from BE:' + responseJWT.data.username);
+        console.log('get token from BE:' + responseJWT.data.accessToken);
+        this.tokenStorage.saveId(responseJWT.data.id);
+        this.tokenStorage.saveToken(responseJWT.data.accessToken);
+        this.tokenStorage.saveUsername(responseJWT.data.username);
+        this.tokenStorage.saveAuthorities(responseJWT.data.roles);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getAuthorities();
+        this.navbar.ngOnInit();
+        console.log('>>>>' + this.tokenStorage);
+        // this.reloadPage();
+        this.router.navigateByUrl('/');
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isLoginFailed = true;
+        this.isSuccess = true;
+      }
+    );
   }
 }

@@ -28,7 +28,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'register-user-host',
+    path: 'register-host',
     component: RegisterHostComponent
   },
   {
