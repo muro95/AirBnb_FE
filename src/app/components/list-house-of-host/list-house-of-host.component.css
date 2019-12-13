@@ -1,18 +1,16 @@
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
 
-/*@font-face {*/
-/*  font-family: Lato-Regular;*/
-/*  src: url('../fonts/Lato/Lato-Regular.ttf');*/
-/*}*/
+@font-face {
+  font-family: Lato-Regular;
+  src: url('~src/assets/fonts/Lato/Lato-Regular.ttf');
+}
 
-/*@font-face {*/
-/*  font-family: Lato-Bold;*/
-/*  src: url('../fonts/Lato/Lato-Bold.ttf');*/
-/*}*/
+@font-face {
+  font-family: Lato-Bold;
+  src: url('~src/assets/fonts/Lato/Lato-Bold.ttf');
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -46,9 +44,13 @@ a:hover {
 }
 
 /* ------------------------------------ */
-h1,h2,h3,h4,h5,h6 {margin: 0px;}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+}
 
-p {margin: 0px;}
+p {
+  margin: 0px;
+}
 
 ul, li {
   margin: 0px;
@@ -421,7 +423,7 @@ th, td {
   overflow: hidden;
 }
 
-.table100.ver4 .table100-body{
+.table100.ver4 .table100-body {
   padding-right: 20px;
 }
 
@@ -477,17 +479,20 @@ th, td {
   border-collapse: separate;
   border-spacing: 0 10px;
 }
+
 .table100.ver5 .table100-body td {
   border: solid 1px transparent;
   border-style: solid none;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .table100.ver5 .table100-body td:first-child {
   border-left-style: solid;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 .table100.ver5 .table100-body td:last-child {
   border-right-style: solid;
   border-bottom-right-radius: 10px;
@@ -510,7 +515,7 @@ th, td {
   overflow: hidden;
 }
 
-.table100.ver5 .table100-body{
+.table100.ver5 .table100-body {
   padding-right: 30px;
 }
 
@@ -524,4 +529,19 @@ th, td {
 
 .table100.ver5 .ps__rail-y .ps__thumb-y::before {
   background-color: #cccccc;
+}
+
+.center-content {
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.row100 head {
+  margin: 0 auto;
+}
+
+.cell100 column2 {
+  margin:  1000px;
 }

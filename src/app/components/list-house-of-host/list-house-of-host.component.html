@@ -2,17 +2,18 @@
 
 
 <!--</div>-->
+<div class="center-content">
 <div class="table100 ver5 m-b-110">
   <div class="table100-head">
-    <table>
+    <table class="row">
       <thead>
       <tr class="row100 head">
-        <th class="cell100 column1">#</th>
-        <th class="cell100 column2">Tên nhà</th>
-        <th class="cell100 column3">Địa chỉ</th>
-        <th class="cell100 column4">Loại nhà</th>
-        <th class="cell100 column5">Giá</th>
-        <th class="cell100 column6">Trạng thái</th>
+        <th class="col-md-2 cell100 column1">#</th>
+        <th class="col-md-2 cell100 column2">Tên nhà</th>
+        <th class="col-md-2 cell100 column3">Địa chỉ</th>
+        <th class="col-md-2 cell100 column4">Loại nhà</th>
+        <th class="col-md-2 cell100 column5">Giá</th>
+        <th class="col-md-2 cell100 column6">Trạng thái</th>
       </tr>
       </thead>
     </table>
@@ -23,14 +24,14 @@
       <table >
         <tbody>
         <tr *ngFor="let houseItem of houseListOfHost.data |
-            paginate: {itemsPerPage: 4, currentPage:pageActual},index as i"
+            paginate: {itemsPerPage: 10, currentPage:pageActual},index as i"
             class="row100 body">
-          <td class="cell100 column1">{{houseItem.id}}</td>
-          <td class="cell100 column2">{{houseItem.houseName}}</td>
-          <td class="cell100 column3">{{houseItem.address}}</td>
-          <td class="cell100 column4">{{houseItem.category}}</td>
-          <td class="cell100 column5">{{houseItem.price}}</td>
-          <td class="cell100 column6">{{houseItem.status}}</td>
+          <td class="col-md-2 cell100 column1">{{houseItem.id}}</td>
+          <td class="col-md-2 cell100 column2">{{houseItem.houseName}}</td>
+          <td class="col-md-2 cell100 column3">{{houseItem.address}}</td>
+          <td class="col-md-2 cell100 column4">{{houseItem.category}}</td>
+          <td class="col-md-2 cell100 column5">{{houseItem.price}}</td>
+          <td class="col-md-2 cell100 column6">{{houseItem.status}}</td>
         </tr>
 
         </tbody>
@@ -41,4 +42,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

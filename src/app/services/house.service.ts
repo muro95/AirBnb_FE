@@ -9,6 +9,7 @@ import {HouseDetails} from '../components/home-detail/house-details/houseDetails
 import {DataCreatedHouse} from '../components/add-house/data-create-house/dataCreatedHouse';
 import {DataHouseListOfHost} from '../components/list-house-of-host/house-list-of-host/dataHouseListOfHost';
 import {HouseListOfHost} from '../components/list-house-of-host/house-list-of-host/houseListOfHost';
+import {DataUserBooking} from '../components/user-booking/data-user-booking/dataUserBooking';
 
 
 @Injectable({
@@ -31,6 +32,10 @@ export class HouseService {
 
   public addHouse(house: DataCreatedHouse): Observable<DataCreatedHouse> {
     return this.httpClient.post<DataCreatedHouse>(this.API_URL + 'host/houses', house);
+  }
+
+  public sendRequestBooking(booking: DataUserBooking, id: number): Observable<DataUserBooking> {
+    return this.httpClient.post<DataUserBooking>(this.API_URL + 'houses/' + id + '/booking', booking);
   }
 
   public getListHouseOfHost(): Observable<HouseListOfHost> {

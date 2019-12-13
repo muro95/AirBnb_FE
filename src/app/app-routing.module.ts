@@ -33,16 +33,16 @@ const routes: Routes = [
     component: HomeDetailComponent
   },
   {
+    path: 'home/:houseId/:houseName/booking',
+    component: UserBookingComponent
+  },
+  {
     path: 'home/house-list-for-guest',
     component: HomeListForGuestComponent
   },
   {
     path: 'home/add-house',
     component: AddHouseComponent
-  },
-  {
-    path: 'home/user-booking',
-    component: UserBookingComponent
   },
   {
     path: 'home/house-of-host',
