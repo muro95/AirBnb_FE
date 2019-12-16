@@ -1,31 +1,19 @@
 export class DataHouseListOfHost {
   private _id: number;
-  private _houseName: string;
-  private _category: string;
-  private _orderHouses: [];
-  private _address: string;
-  private _bedroomNumber: string;
-  private _bathroomNumber: string;
-  private _description: string;
+  private _name: string;
+  private _address: number;
+  private _categoryName: string;
   private _price: string;
-  private _area: string;
   private _status: string;
-  private _user: number;
 
 
-  constructor(id: number, houseName: string, category: string, orderHouses: [], address: string, bedroomNumber: string, bathroomNumber: string, description: string, price: string, area: string, status: string, user: number) {
+  constructor(id: number, name: string, address: number, categoryName: string, price: string, status: string) {
     this._id = id;
-    this._houseName = houseName;
-    this._category = category;
-    this._orderHouses = orderHouses;
+    this._name = name;
     this._address = address;
-    this._bedroomNumber = bedroomNumber;
-    this._bathroomNumber = bathroomNumber;
-    this._description = description;
+    this._categoryName = categoryName;
     this._price = price;
-    this._area = area;
     this._status = status;
-    this._user = user;
   }
 
 
@@ -37,60 +25,28 @@ export class DataHouseListOfHost {
     this._id = value;
   }
 
-  get houseName(): string {
-    return this._houseName;
+  get name(): string {
+    return this._name;
   }
 
-  set houseName(value: string) {
-    this._houseName = value;
+  set name(value: string) {
+    this._name = value;
   }
 
-  get category(): string {
-    return this._category;
-  }
-
-  set category(value: string) {
-    this._category = value;
-  }
-
-  get orderHouses(): [] {
-    return this._orderHouses;
-  }
-
-  set orderHouses(value: []) {
-    this._orderHouses = value;
-  }
-
-  get address(): string {
+  get address(): number {
     return this._address;
   }
 
-  set address(value: string) {
+  set address(value: number) {
     this._address = value;
   }
 
-  get bedroomNumber(): string {
-    return this._bedroomNumber;
+  get categoryName(): string {
+    return this._categoryName;
   }
 
-  set bedroomNumber(value: string) {
-    this._bedroomNumber = value;
-  }
-
-  get bathroomNumber(): string {
-    return this._bathroomNumber;
-  }
-
-  set bathroomNumber(value: string) {
-    this._bathroomNumber = value;
-  }
-
-  get description(): string {
-    return this._description;
-  }
-
-  set description(value: string) {
-    this._description = value;
+  set categoryName(value: string) {
+    this._categoryName = value;
   }
 
   get price(): string {
@@ -101,27 +57,11 @@ export class DataHouseListOfHost {
     this._price = value;
   }
 
-  get area(): string {
-    return this._area;
-  }
-
-  set area(value: string) {
-    this._area = value;
-  }
-
   get status(): string {
     return this._status;
   }
 
   set status(value: string) {
     this._status = value;
-  }
-
-  get user(): number {
-    return this._user;
-  }
-
-  set user(value: number) {
-    this._user = value;
   }
 }

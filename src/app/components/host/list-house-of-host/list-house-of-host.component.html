@@ -2,47 +2,32 @@
 
 
 <!--</div>-->
-<div class="center-content">
-  <div class="table100 ver5 m-b-110">
-    <div class="table100-head">
-      <table class="row">
-        <thead>
-        <tr class="row100 head">
-          <th class="col-md-2 cell100 column1">#</th>
-          <th class="col-md-2 cell100 column2">Tên nhà</th>
-          <th class="col-md-2 cell100 column3">Địa chỉ</th>
-          <th class="col-md-2 cell100 column4">Loại nhà</th>
-          <th class="col-md-2 cell100 column5">Giá</th>
-          <th class="col-md-2 cell100 column6">Trạng thái</th>
-        </tr>
-        </thead>
-      </table>
-    </div>
 
-    <div class="table100-body js-pscroll">
-      <div *ngIf="houseListOfHost">
-        <table>
-          <tbody>
-          <tr *ngFor="let houseItem of houseListOfHost.data|
-            paginate: {itemsPerPage: 10, currentPage:pageActual},index as i"
-              class="row100 body">
-            <td class="col-md-2 cell100 column1">{{houseItem.id}}</td>
-            <td class="col-md-2 cell100 column2">{{houseItem.houseName}}</td>
-            <td class="col-md-2 cell100 column3">{{houseItem.address}}</td>
-            <td class="col-md-2 cell100 column4">{{houseItem.category}}</td>
-            <td class="col-md-2 cell100 column5">{{houseItem.price}}</td>
-            <td class="col-md-2 cell100 column6">{{houseItem.status}}</td>
-          </tr>
-
-          </tbody>
-        </table>
-        <div style="text-align: center">
-          <pagination-controls (pageChange)="pageActual = $event"
-          ></pagination-controls>
-        </div>
-
-      </div>
-    </div>
-  </div>
+<table *ngIf="houseListOfHost" class="table table-hover">
+  <thead>
+  <tr class="table-bordered table-primary" style="text-align: center; font-weight: 900 ; color: red ; font-size: 50px">
+    <th scope="col">#ID</th>
+    <th scope="col">Tên Nhà</th>
+    <th scope="col">Địa Chỉ</th>
+    <th scope="col">Loại Nhà</th>
+    <th scope="col">Giá</th>
+    <th scope="col">Trạng Thái</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr routerLink="/home/{{houseItem.id}}/{{houseItem.name}}" class="table-bordered" style="text-align: center" *ngFor="let houseItem of houseListOfHost.data |
+    paginate: {itemsPerPage: 9, currentPage:pageActual},index as i">
+    <th  scope="row">{{houseItem.id}}</th>
+    <th>{{houseItem.name}}</th>
+    <th>{{houseItem.address}}</th>
+    <th>{{houseItem.categoryName}}</th>
+    <th>{{houseItem.price}}</th>
+    <th>{{houseItem.status}}</th>
+  </tr>
+  </tbody>
+</table>
+<div id="pagination">
+  <pagination-controls (pageChange)="pageActual = $event"
+  ></pagination-controls>
 </div>
-
+<router-outlet></router-outlet>
