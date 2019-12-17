@@ -25,8 +25,7 @@ import { ListOrderOfUserComponent } from './components/user/list-order-of-user/l
 import { CategoryHouseComponent } from './components/category-house/category-house.component';
 import { CancelOrderComponent } from './components/user/list-order-of-user/cancel-order/cancel-order.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatDialogModule} from '@angular/material';
-import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
+import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 
 // npm install --save @angular/material @angular/cdk @angular/animations
 
@@ -53,8 +52,7 @@ const routes: Routes = [
     ListHouseOfHostComponent,
     ListOrderOfUserComponent,
     CategoryHouseComponent,
-    CancelOrderComponent,
-    ConfirmationDialogComponent,
+    CancelOrderComponent
   ],
   imports: [
     Ng2SearchPipeModule,
@@ -67,8 +65,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     OrderModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    MatButtonModule
+    ConfirmationPopoverModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

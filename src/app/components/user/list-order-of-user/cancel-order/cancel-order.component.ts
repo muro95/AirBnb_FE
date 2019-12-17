@@ -7,8 +7,6 @@ import {OrderListOfUser} from '../dataOrderListOfUser/orderListOfUser';
 import {Subscription} from 'rxjs';
 import {CancelOrder} from './dataCancelOrder/cancelOrder';
 import {DataCancelOrder} from './dataCancelOrder/dataCancelOrder';
-import {ConfirmationDialogComponent} from '../../../shared/confirmation-dialog/confirmation-dialog.component';
-import {MatDialog} from '@angular/material';
 
 
 @Component({
@@ -18,8 +16,10 @@ import {MatDialog} from '@angular/material';
 })
 export class CancelOrderComponent implements OnInit {
 
+  public confirmClicked = false;
+  public cancelClicked = false;
 
-  constructor(public dialog: MatDialog,
+  constructor(
               private activatedRoute: ActivatedRoute,
               private token: TokenStorageService,
               private router: Router,
@@ -81,17 +81,4 @@ export class CancelOrderComponent implements OnInit {
 
   }
 
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '350px',
-      data: 'Do you confirm the deletion of this data?'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Yes clicked');
-        // DO SOMETHING
-      }
-    });
-  }
 }

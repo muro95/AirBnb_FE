@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
 import {TokenStorageService} from './auth/token-storage.service';
 import {Router} from '@angular/router';
-import {ConfirmationDialogComponent} from './components/shared/confirmation-dialog/confirmation-dialog.component';
-import {MatDialog} from '@angular/material';
 
 
 @Component({

@@ -2,9 +2,6 @@
 
 <div *ngIf="order.data" class="full-content">
   <p>Bạn có chắc muốn xóa : <u class="text-danger"></u></p>
-  <div *ngIf="message">
-    <p style="color: red">{{ message }} : <u class="text-danger">{{order.data.houseName}}</u></p>
-  </div>
   <table class="table table-bordered">
     <tr>
       <th><p>Tên nhà : </p></th>
@@ -20,14 +17,12 @@
     </tr>
   </table>
   <div class="btn-choice">
-    <input class="btn btn-success" type="button" value="Cancel" class="btn btn-success" style="margin-left: 60px" (click)="cancel()">
+    <input  type="button" value="Cancel" class="btn btn-success" style="margin-left: 60px" (click)="cancel()">
     <button type="button" value="Back" class="btn btn-success"
             style="margin-left: 60px;"
             routerLink="/home/list-order-of-user">Back
     </button>
-
   </div>
-
 </div>
-  <button mat-button (click)="openDialog()">Confirm box</button>
+
 </div>
