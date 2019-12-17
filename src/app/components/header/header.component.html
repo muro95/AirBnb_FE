@@ -33,7 +33,7 @@
         </li>
 
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/house-of-host">House List</label>
+          <label class="nav-link">Manage House</label>
         </li>
 
         <li class="nav-item" *ngIf="!authority">
@@ -46,7 +46,7 @@
           <label class="nav-link" routerLink="/register">Register for User</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/register">Host</label>
+          <label class="nav-link" routerLink="/home/house-of-host">Host</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'host'">
           <label class="nav-link" routerLink="/register">Messages</label>

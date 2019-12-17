@@ -9,9 +9,9 @@ import {HouseService} from '../../../services/house/house.service';
   styleUrls: ['./home-list-for-guest.component.css']
 })
 export class HomeListForGuestComponent implements OnInit {
-  private info: any;
-// pagination setting
-  pageActual = 1;
+    private info: any;
+  // pagination setting
+    pageActual = 1;
   maxSize = 3;
   searchText;
   house: House;

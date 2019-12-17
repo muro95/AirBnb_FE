@@ -31,6 +31,8 @@ export class HouseService {
     return this.httpClient.get<HouseDetails>(this.API_URL + 'houses2/' + id);
   }
 
+
+
   public addHouse(house: DataCreatedHouse): Observable<DataCreatedHouse> {
     return this.httpClient.post<DataCreatedHouse>(this.API_URL + 'host/houses', house);
   }
@@ -43,4 +45,6 @@ export class HouseService {
   public getListCategory(): Observable<CategoryHouse> {
     return this.httpClient.get<CategoryHouse>(this.API_URL + 'category-list');
   }
+
+
 }

@@ -12,6 +12,7 @@ import {ListHouseOfHostComponent} from './components/host/list-house-of-host/lis
 import {ListOrderOfUserComponent} from './components/user/list-order-of-user/list-order-of-user.component';
 import {CategoryHouse} from './components/category-house/data-category/categoryHouse';
 import {CategoryHouseComponent} from './components/category-house/category-house.component';
+import {CancelOrderComponent} from './components/user/list-order-of-user/cancel-order/cancel-order.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,14 @@ const routes: Routes = [
   {
     path: 'home/category-list',
     component: CategoryHouseComponent
+  },
+  {
+    path: 'home/order-list-of-user',
+    component: ListOrderOfUserComponent
+  },
+  {
+    path: 'home/list-order-of-user/cancel/:id',
+    component: CancelOrderComponent
   }
 ];
 

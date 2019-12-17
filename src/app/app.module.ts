@@ -23,8 +23,12 @@ import { UserBookingComponent } from './components/user/user-booking/user-bookin
 import { ListHouseOfHostComponent } from './components/host/list-house-of-host/list-house-of-host.component';
 import { ListOrderOfUserComponent } from './components/user/list-order-of-user/list-order-of-user.component';
 import { CategoryHouseComponent } from './components/category-house/category-house.component';
+import { CancelOrderComponent } from './components/user/list-order-of-user/cancel-order/cancel-order.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatDialogModule} from '@angular/material';
+import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
 
-
+// npm install --save @angular/material @angular/cdk @angular/animations
 
 
 const routes: Routes = [
@@ -48,7 +52,9 @@ const routes: Routes = [
     UserBookingComponent,
     ListHouseOfHostComponent,
     ListOrderOfUserComponent,
-    CategoryHouseComponent
+    CategoryHouseComponent,
+    CancelOrderComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     Ng2SearchPipeModule,
@@ -59,7 +65,10 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    OrderModule
+    OrderModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

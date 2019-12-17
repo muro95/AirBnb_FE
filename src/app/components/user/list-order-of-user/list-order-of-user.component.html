@@ -1,1 +1,42 @@
-<p>list-order-of-user works!</p>
+<!--<div *ngFor="let houseItem of houseListOfHost">-->
+
+
+<!--</div>-->
+
+<table *ngIf="order" class="table table-hover">
+  <thead>
+  <tr class="table-bordered table-primary" style="text-align: center; font-weight: 900 ; color: red ; font-size: 50px">
+    <th scope="col">#ID</th>
+    <th scope="col">Tên Nhà</th>
+    <th scope="col">Check in</th>
+    <th scope="col">Check out</th>
+    <th scope="col">Người</th>
+    <th scope="col">Thời gian đặt</th>
+    <th scope="col">Trạng thái</th>
+    <th scope="col">
+
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="table-bordered" style="text-align: center"
+      *ngFor="let orderItem of order.data |
+    paginate: {itemsPerPage: 9, currentPage:pageActual},index as i">
+    <th scope="row">{{orderItem.id}}</th>
+    <th>{{orderItem.houseName}}</th>
+    <th>{{orderItem.checkin}}</th>
+    <th>{{orderItem.checkout}}</th>
+    <th>{{orderItem.numberGuest}}</th>
+    <th>{{orderItem.orderTime}}</th>
+
+    <th>
+      <a class="add-to-cart" [routerLink]="['cancel', orderItem.id]">Cancel</a>
+    </th>
+  </tr>
+  </tbody>
+</table>
+<div id="pagination">
+  <pagination-controls (pageChange)="pageActual = $event"
+  ></pagination-controls>
+</div>
+<router-outlet></router-outlet>
