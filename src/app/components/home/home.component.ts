@@ -5,6 +5,8 @@ import {HouseService} from '../../services/house.service';
 import {Data} from '@angular/router';
 import {DataHouseList} from '../../interface/house-list/dataHouseList';
 import {Info} from '../../interface/info';
+import {HouseConvert} from '../../interface/house/houseConvert';
+import {HouseList} from '../../interface/house/houList';
 
 
 @Component({
@@ -15,7 +17,7 @@ import {Info} from '../../interface/info';
 export class HomeComponent implements OnInit {
   private info: Info = {username: '', authorities: []};
 
-   house: House;
+   house: HouseConvert[];
 
 
   searchAddress = '';
@@ -42,9 +44,11 @@ export class HomeComponent implements OnInit {
   }
 
   private getHouseList() {
-    this.houseService.getList().subscribe(result => {
-      this.house = result;
-      console.log('>>> house list:' + JSON.stringify(this.house));
-    });
+    // this.houseService.getList().subscribe(result => {
+    //   this.house = result;
+    //   console.log('>>> house list:' + JSON.stringify(this.house));
+    // });
+    this.house = this.houseService.convertHouseList();
+    console.log('>>>>House list:' + JSON.stringify(this.house));
   }
 }

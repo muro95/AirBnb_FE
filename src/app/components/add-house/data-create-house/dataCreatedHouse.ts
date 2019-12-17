@@ -1,8 +1,12 @@
+import {Picture} from './picture';
+
 export class DataCreatedHouse {
 // tslint:disable-next-line:variable-name
   private _houseName: string;
   // tslint:disable-next-line:variable-name
   private _category: number;
+  // tslint:disable-next-line:variable-name
+  private _picture: string;
   // tslint:disable-next-line:variable-name
   private _address: string;
   // tslint:disable-next-line:variable-name
@@ -20,9 +24,10 @@ export class DataCreatedHouse {
 
 
   // tslint:disable-next-line:max-line-length
-  constructor(houseName: string, category: number, address: string, bedroomNumber: string, bathroomNumber: string, description: string, price: string, area: string, user: string) {
+  constructor(houseName: string, category: number, picture: string, address: string, bedroomNumber: string, bathroomNumber: string, description: string, price: string, area: string, user: string) {
     this._houseName = houseName;
     this._category = category;
+    this._picture = picture;
     this._address = address;
     this._bedroomNumber = bedroomNumber;
     this._bathroomNumber = bathroomNumber;
@@ -36,7 +41,7 @@ export class DataCreatedHouse {
     return this._houseName;
   }
 
-  set houseName(value: string) {
+  set setHouseName(value: string) {
     this._houseName = value;
   }
 
@@ -44,15 +49,21 @@ export class DataCreatedHouse {
     return this._category;
   }
 
-  set category(value: number) {
+  set setCategory(value: number) {
     this._category = value;
   }
+  get picture(): string {
+    return this._picture;
+  }
 
+  set picture(value: string) {
+    this._picture = value;
+  }
   get address(): string {
     return this._address;
   }
 
-  set address(value: string) {
+  set setAddress(value: string) {
     this._address = value;
   }
 
@@ -60,7 +71,7 @@ export class DataCreatedHouse {
     return this._bedroomNumber;
   }
 
-  set bedroomNumber(value: string) {
+  set setBedroomNumber(value: string) {
     this._bedroomNumber = value;
   }
 
@@ -68,7 +79,7 @@ export class DataCreatedHouse {
     return this._bathroomNumber;
   }
 
-  set bathroomNumber(value: string) {
+  set setBathroomNumber(value: string) {
     this._bathroomNumber = value;
   }
 
@@ -76,7 +87,7 @@ export class DataCreatedHouse {
     return this._description;
   }
 
-  set description(value: string) {
+  set setDescription(value: string) {
     this._description = value;
   }
 
@@ -84,7 +95,7 @@ export class DataCreatedHouse {
     return this._price;
   }
 
-  set price(value: string) {
+  set setPrice(value: string) {
     this._price = value;
   }
 
@@ -92,7 +103,7 @@ export class DataCreatedHouse {
     return this._area;
   }
 
-  set area(value: string) {
+  set setArea(value: string) {
     this._area = value;
   }
 
@@ -100,7 +111,7 @@ export class DataCreatedHouse {
     return this._user;
   }
 
-  set user(value: string) {
+  set setUser(value: string) {
     this._user = value;
   }
 }

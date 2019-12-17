@@ -7,7 +7,6 @@
     <form [formGroup]="houseForm" (ngSubmit)="onSubmit()" style="border: 4px solid #DF4B3B">
 
       <div class="form-group">
-
         <div class="form-group">
           <label>House Name</label>
           <input type="text"
@@ -23,6 +22,14 @@
         <label for="exampleInputPassword1">Category: </label>
         <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Category"
                formControlName="category"
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Picture: </label>
+        <input type="file" class="form-control" placeholder="picture"
+               formControlName="picture"
+               (change)="uploadFile($event)"
+               multiple
         >
       </div>
       <div class="form-group">
@@ -55,17 +62,10 @@
                formControlName="price"
         >
       </div>
-      <!--  <div class="form-group">-->
-      <!--    <label for="exampleInputPassword1">Area: </label>-->
-      <!--    <input type="text" class="form-control"  placeholder="Title"-->
-      <!--           formControlName="area"-->
-      <!--    >-->
-      <!--  </div>-->
-
-
       <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">Register</button>
       </div>
     </form>
   </fieldset>
 </div>
+

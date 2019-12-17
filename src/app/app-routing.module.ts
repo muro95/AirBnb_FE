@@ -8,7 +8,6 @@ import {HomeListForGuestComponent} from './components/home-list-for-guest/home-l
 import {RegisterHostComponent} from './components/register-host/register-host.component';
 import {AddHouseComponent} from './components/add-house/add-house.component';
 
-
 const routes: Routes = [
   {
     path: 'home',
@@ -40,7 +39,6 @@ const routes: Routes = [
   }
 ];
 
-// @ts-ignore
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

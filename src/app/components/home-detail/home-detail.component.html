@@ -37,7 +37,7 @@
   <!--  </div>-->
 
 <div *ngIf="house">
-  <div *ngIf="house.data">
+  <div *ngIf="house">
 <div class="container">
   <h1> </h1>
   <div class="card">
@@ -46,23 +46,23 @@
         <div class="preview col-md-6">
 
           <div class="preview-pic tab-content">
-            <div class="tab-pane active" id="pic-1"><img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg" /></div>
-            <div class="tab-pane" id="pic-2"><img src="https://vcdn-giadinh.vnecdn.net/2019/03/20/111-1553059524-9949-1553059583.png" /></div>
-            <div class="tab-pane" id="pic-3"><img src="http://cafefcdn.com/thumb_w/650/2019/photo1566283815884-1566283816138-crop-15662838208692096375861.jpg" /></div>
-            <div class="tab-pane" id="pic-4"><img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg" /></div>
-            <div class="tab-pane" id="pic-5"><img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg" /></div>
+            <div class="tab-pane active" id="pic-1"><img src="{{house.picture[0]}}" /></div>
+            <div class="tab-pane" id="pic-2"><img src="{{house.picture[1]}}" /></div>
+            <div class="tab-pane" id="pic-3"><img src="{{house.picture[2]}}" /></div>
+            <div class="tab-pane" id="pic-4"><img src="{{house.picture[3]}}" /></div>
+            <div class="tab-pane" id="pic-5"><img src="{{house.picture[4]}}" /></div>
           </div>
-          <ul class="preview-thumbnail nav nav-tabs">
-            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg" /></a></li>
-            <li><a data-target="#pic-2" data-toggle="tab"><img src="https://vcdn-giadinh.vnecdn.net/2019/03/20/111-1553059524-9949-1553059583.png" /></a></li>
-            <li><a data-target="#pic-3" data-toggle="tab"><img src="http://cafefcdn.com/thumb_w/650/2019/photo1566283815884-1566283816138-crop-15662838208692096375861.jpg" /></a></li>
-            <li><a data-target="#pic-4" data-toggle="tab"><img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg" /></a></li>
-            <li><a data-target="#pic-5" data-toggle="tab"><img src="https://wedo.vn/wp-content/uploads/2019/09/nha-vuon-cap-4-mai-thai-nong-thon-1.jpg" /></a></li>
+          <ul class="preview-thumbnail nav nav-tabs" >
+            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{house.picture[0]}}" /></a></li>
+            <li><a data-target="#pic-2" data-toggle="tab"><img src="{{house.picture[1]}}" /></a></li>
+            <li><a data-target="#pic-3" data-toggle="tab"><img src="{{house.picture[2]}}" /></a></li>
+            <li><a data-target="#pic-4" data-toggle="tab"><img src="{{house.picture[3]}}" /></a></li>
+            <li><a data-target="#pic-5" data-toggle="tab"><img src="{{house.picture[4]}}" /></a></li>
           </ul>
 
         </div>
         <div class="details col-md-6">
-          <h3 class="product-title">{{house.data.name}}</h3>
+          <h3 class="product-title">{{house.name}}</h3>
           <div class="rating">
             <div class="stars">
               <span class="fa fa-star checked"></span>
@@ -73,13 +73,13 @@
             </div>
             <span class="review-no">41 reviews</span>
           </div>
-          <p class="product-description">{{house.data.description}}</p>
-          <h4 class="price">current price: <span>{{house.data.price}} vnd</span></h4>
+          <p class="product-description">{{house.description}}</p>
+          <h4 class="price">current price: <span>{{house.price}} vnd</span></h4>
 <!--          <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>-->
           <h5 class="sizes">Category:
-            <span class="size" data-toggle="tooltip" title="small">{{house.data.catName}}</span>
+            <span class="size" data-toggle="tooltip" title="small">{{house.catName}}</span>
           </h5>
-          <div class="colors" routerLink="/home">Host: <label> {{house.data.userName}}</label>
+          <div class="colors" routerLink="/home">Host: <label> {{house.userName}}</label>
           </div>
           <div class="action">
             <button class="add-to-cart btn btn-default" type="button">Booking Now</button>

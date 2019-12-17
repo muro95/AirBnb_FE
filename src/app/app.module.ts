@@ -22,6 +22,11 @@ import { HeaderComponent } from './components/header/header.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {OrderModule} from 'ngx-order-pipe';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {environment} from '../environments/environment';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 
 
@@ -46,7 +51,7 @@ const routes: Routes = [
     RegisterHostComponent,
     AddHouseComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     Ng2SearchPipeModule,
@@ -57,7 +62,11 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    OrderModule
+    OrderModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

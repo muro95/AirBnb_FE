@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {House} from '../../interface/house/house';
-import {CategoryHouse} from '../../interface/category-house';
-import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HouseService} from '../../services/house.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {HouseDetails} from './house-details/houseDetails';
-import {DataHouseDetails} from './house-details/dataHouseDetails';
+import {HouseConvert} from '../../interface/house/houseConvert';
+import {HouseConvertById} from '../../interface/house/houseConvertById';
+import {isCombinedNodeFlagSet} from 'tslint';
 
 @Component({
   selector: 'app-home-detail',
@@ -17,17 +16,9 @@ import {DataHouseDetails} from './house-details/dataHouseDetails';
 export class HomeDetailComponent implements OnInit {
   private houseId: string;
   userId: string;
-  house: HouseDetails;
+  house: HouseConvertById;
   id: number;
   houseName: string;
-
-
-  // formCommentCreate = new FormGroup({
-  //   commentInput: new FormControl('')
-  // });
-  // commentUpdate = new FormControl();
-
-  // private idComment: number;
   private tokenJWT: string;
   private info: any;
 
@@ -43,7 +34,6 @@ export class HomeDetailComponent implements OnInit {
     this.userId = this.token.getUserId();
     this.tokenJWT = this.token.getToken();
   }
-
   ngOnInit() {
     // console.log(this.houseId, this.token.getUserId());
     this.getHouseId();
@@ -57,11 +47,14 @@ export class HomeDetailComponent implements OnInit {
 
   getHouseId() {
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.houseService.getHouseId(this.id).subscribe(result => {
-      this.house = result;
-      console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
-    }, error => {
-      console.log(error);
-    });
+    this.house = this.houseService.convertHouseId(this.id);
+    console.log(this.house);
+    // const id = +this.activatedRoute.snapshot.paramMap.get('id');
+    // this.houseService.getHouseId(this.id).subscribe(result => {
+    //   this.house = result;
+    //   console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
+    // }, error => {
+    //   console.log(error);
+    // });
   }
 }

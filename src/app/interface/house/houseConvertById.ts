@@ -1,9 +1,9 @@
-export class  DataHouseDetails {
+export class HouseConvertById {
   // tslint:disable-next-line:variable-name
   private _id: number; // tslint:disable-next-line:variable-name
   private _name: string; // tslint:disable-next-line:variable-name
   private _catName: string; // tslint:disable-next-line:variable-name
-  private _picture: string; // tslint:disable-next-line:variable-name
+  private _picture: string[]; // tslint:disable-next-line:variable-name
   private _address: string; // tslint:disable-next-line:variable-name
   private _bedroomNumber: string; // tslint:disable-next-line:variable-name
   private _bathroomNumber: string; // tslint:disable-next-line:variable-name
@@ -12,12 +12,10 @@ export class  DataHouseDetails {
   private _area: string; // tslint:disable-next-line:variable-name
   private _userName: string; // tslint:disable-next-line:variable-name
   private _userId: string; // tslint:disable-next-line:variable-name
-
-
-  constructor(id: number, name: string, catName: string, picture: string,
+  constructor(id: number, name: string, catName: string, picture: string[],
               address: string, bedroomNumber: string,
               bathroomNumber: string, description: string,
-              price: string, area: string, userName: string, userId: string) {
+              price: string , area: string, userName: string, userId: string) {
     this._id = id;
     this._name = name;
     this._catName = catName;
@@ -56,11 +54,11 @@ export class  DataHouseDetails {
   set catName(value: string) {
     this._catName = value;
   }
-  get picture(): string {
+  get picture(): string[] {
     return this._picture;
   }
 
-  set picture(value: string) {
+  set picture(value: string[]) {
     this._picture = value;
   }
 

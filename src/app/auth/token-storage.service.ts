@@ -6,7 +6,6 @@ const AUTHORITIES_KEY = 'AuthAuthorities';
 const ID_KEY = 'AuthUserId';
 const NAME_KEY = 'Name';
 const EMAIL_KEY = 'Email';
-
 @Injectable({
   providedIn: 'root'
 })
