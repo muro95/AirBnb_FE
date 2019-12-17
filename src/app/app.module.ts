@@ -26,6 +26,11 @@ import { CategoryHouseComponent } from './components/category-house/category-hou
 import { CancelOrderComponent } from './components/user/list-order-of-user/cancel-order/cancel-order.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 // npm install --save @angular/material @angular/cdk @angular/animations
 
@@ -65,7 +70,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     OrderModule,
     BrowserAnimationsModule,
-    ConfirmationPopoverModule
+    ConfirmationPopoverModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

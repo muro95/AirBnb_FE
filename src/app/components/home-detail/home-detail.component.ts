@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {House} from '../user/home-list-for-guest/house-list/house';
+import {House} from '../../interface/house/house';
 import {CategoryHouse} from '../../interface/category-house';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -8,6 +8,7 @@ import {HouseService} from '../../services/house/house.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {HouseDetails} from './house-details/houseDetails';
 import {DataHouseDetails} from './house-details/dataHouseDetails';
+import {HouseConvertById} from '../../interface/house/houseConvertById';
 
 @Component({
   selector: 'app-home-detail',
@@ -17,7 +18,7 @@ import {DataHouseDetails} from './house-details/dataHouseDetails';
 export class HomeDetailComponent implements OnInit {
   private houseId: string;
   userId: string;
-  house: HouseDetails;
+  // house: HouseDetails;
   id: number;
   houseName: string;
   private roles: string[];
@@ -31,6 +32,8 @@ export class HomeDetailComponent implements OnInit {
   // private idComment: number;
   private tokenJWT: string;
   private info: any;
+  house: HouseConvertById;
+
 
   constructor(private activatedRoute: ActivatedRoute,
               private domSanitizer: DomSanitizer,
@@ -73,11 +76,13 @@ export class HomeDetailComponent implements OnInit {
 
   getHouseId() {
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.houseService.getHouseId(this.id).subscribe(result => {
-      this.house = result;
-      console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
-    }, error => {
-      console.log(error);
-    });
+    // this.houseService.getHouseId(this.id).subscribe(result => {
+    //   this.house = result;
+    //   console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
+    // }, error => {
+    //   console.log(error);
+    // });
+    this.house = this.houseService.convertHouseId(this.id);
+    console.log(this.house);
   }
 }

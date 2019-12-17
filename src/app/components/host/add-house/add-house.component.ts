@@ -3,10 +3,12 @@ import {HouseService} from '../../../services/house/house.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {TokenStorageService} from '../../../auth/token-storage.service';
 import {Router} from '@angular/router';
-import {House} from '../../user/home-list-for-guest/house-list/house';
+import {House} from '../../../interface/house/house';
 import {DataCreatedHouse} from './data-create-house/dataCreatedHouse';
 import {CreateHouse} from './data-create-house/createHouse';
 import {CategoryHouse} from '../../category-house/data-category/categoryHouse';
+import {AngularFireDatabase} from '@angular/fire/database';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-add-house',
@@ -22,10 +24,16 @@ export class AddHouseComponent implements OnInit {
   submitted = false;
   categorySelected: number;
 
+  houseData: DataCreatedHouse;
+
+  picture: string;
+  arrayPicture: string;
+
   constructor(private houseService: HouseService,
               private token: TokenStorageService,
               private router: Router,
-              private formBuilder: FormBuilder
+              private formBuilder: FormBuilder,
+              private fb: AngularFireDatabase
   ) {
   }
 
@@ -43,6 +51,7 @@ export class AddHouseComponent implements OnInit {
     this.houseForm = this.formBuilder.group({
       houseName: new FormControl('', Validators.required),
       category: new FormControl(this.category),
+      picture: new FormControl(''),
       address: new FormControl('', Validators.required),
       bedroomNumber: new FormControl('', Validators.required),
       bathroomNumber: new FormControl('', Validators.required),
@@ -67,12 +76,14 @@ export class AddHouseComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
+    this.houseData = this.houseForm.value;
+    this.houseData.picture = this.arrayPicture;
+    console.log(this.houseData);
     const house = this.houseForm.value;
 
     // stop here if form is invalid
     if (this.houseForm.invalid) {
-      return this.houseService.addHouse(house).subscribe(result => {
+      return this.houseService.addHouse(this.houseData).subscribe(result => {
         this.isSuccess = false;
         // this.router.navigate(['/home/house-list-for-guest']);
       });
@@ -83,6 +94,36 @@ export class AddHouseComponent implements OnInit {
     }
 
     alert('SUCCESS!! :-)');
+  }
+
+
+  uploadFile(event) {
+    this.arrayPicture = '';
+    console.log(event);
+    const file = event.target.files;
+    const metadata = {
+      contentType: 'image/jpeg',
+    };
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < file.length; i++) {
+      const uploadTask = firebase.storage().ref('img/' + Date.now()).put(file[i], metadata);
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+        (snapshot) => {
+          // in progress
+          const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
+            this.picture = downloadURL;
+            this.arrayPicture += this.picture + ' ';
+            console.log('>>> ' + this.arrayPicture);
+          });
+        }
+      );
+    }
   }
 
 }
