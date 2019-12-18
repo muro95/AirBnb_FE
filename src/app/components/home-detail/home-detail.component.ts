@@ -3,10 +3,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HouseService} from '../../services/house.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
-import {HouseDetails} from './house-details/houseDetails';
-import {HouseConvert} from '../../interface/house/houseConvert';
 import {HouseConvertById} from '../../interface/house/houseConvertById';
-import {isCombinedNodeFlagSet} from 'tslint';
+import {DataHouseDetails} from './house-details/dataHouseDetails';
+import {timeout} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-detail',
@@ -16,6 +15,7 @@ import {isCombinedNodeFlagSet} from 'tslint';
 export class HomeDetailComponent implements OnInit {
   private houseId: string;
   userId: string;
+  houseDemo: DataHouseDetails;
   house: HouseConvertById;
   id: number;
   houseName: string;
@@ -34,10 +34,13 @@ export class HomeDetailComponent implements OnInit {
     this.userId = this.token.getUserId();
     this.tokenJWT = this.token.getToken();
   }
+
   ngOnInit() {
     // console.log(this.houseId, this.token.getUserId());
     this.getHouseId();
-
+    // this.convertHouseId(this.houseDemo, this.sliptString(this.houseDemo)).subscribe(result => {
+    //   this.house = result;
+    // });
     this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
@@ -47,14 +50,24 @@ export class HomeDetailComponent implements OnInit {
 
   getHouseId() {
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.house = this.houseService.convertHouseId(this.id);
+    this.houseService.getHouseId(this.id).subscribe(result => {
+      this.houseDemo = result.data;
+      console.log('>>>>Data detail house: ' + JSON.stringify(this.houseDemo));
+      this.house = this.convertHouseId(this.houseDemo, this.sliptString(this.houseDemo));
+    }, error => {
+      console.log(error);
+    });
     console.log(this.house);
-    // const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    // this.houseService.getHouseId(this.id).subscribe(result => {
-    //   this.house = result;
-    //   console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
-    // }, error => {
-    //   console.log(error);
-    // });
+  }
+
+  public sliptString(house: DataHouseDetails): any {
+    const arrayPicture = house.picture.split(' ');
+    return arrayPicture;
+  }
+
+  public convertHouseId(house: DataHouseDetails, array: string[]): HouseConvertById {
+    const houseDetail = new HouseConvertById(house.id, house.name, house.catName, array, house.address,
+      house.bedroomNumber, house.bathroomNumber, house.description, house.price, house.area, house.userName, house.userId);
+    return houseDetail;
   }
 }
