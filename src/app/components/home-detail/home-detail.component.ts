@@ -33,7 +33,7 @@ export class HomeDetailComponent implements OnInit {
   private tokenJWT: string;
   private info: any;
   house: HouseConvertById;
-
+  houseDemo: DataHouseDetails;
 
   constructor(private activatedRoute: ActivatedRoute,
               private domSanitizer: DomSanitizer,
@@ -76,13 +76,23 @@ export class HomeDetailComponent implements OnInit {
 
   getHouseId() {
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    // this.houseService.getHouseId(this.id).subscribe(result => {
-    //   this.house = result;
-    //   console.log('>>>>Data detail house: ' + JSON.stringify(this.house));
-    // }, error => {
-    //   console.log(error);
-    // });
-    this.house = this.houseService.convertHouseId(this.id);
+    this.houseService.getHouseId(this.id).subscribe(result => {
+      this.houseDemo = result.data;
+      console.log('>>>>Data detail house: ' + JSON.stringify(this.houseDemo));
+      this.house = this.convertHouseId(this.houseDemo, this.sliptString(this.houseDemo));
+    }, error => {
+      console.log(error);
+    });
     console.log(this.house);
+  }
+  public sliptString(house: DataHouseDetails): any {
+    const arrayPicture = house.picture.split(' ');
+    return arrayPicture;
+  }
+
+  public convertHouseId(house: DataHouseDetails, array: string[]): HouseConvertById {
+    const houseDetail = new HouseConvertById(house.id, house.name, house.catName, array, house.address,
+      house.bedroomNumber, house.bathroomNumber, house.description, house.price, house.area, house.userName, house.userId);
+    return houseDetail;
   }
 }

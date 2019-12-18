@@ -77,6 +77,7 @@ export class AddHouseComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.houseData = this.houseForm.value;
+    this.arrayPicture = this.arrayPicture.trim();
     this.houseData.picture = this.arrayPicture;
     console.log(this.houseData);
     const house = this.houseForm.value;
@@ -104,26 +105,26 @@ export class AddHouseComponent implements OnInit {
     const metadata = {
       contentType: 'image/jpeg',
     };
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < file.length; i++) {
-      const uploadTask = firebase.storage().ref('img/' + Date.now()).put(file[i], metadata);
-      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+    let i = 0;
+    while ( i < file.length ) {
+      console.log('Outside ', i, file[i]);
+      // @ts-ignore
+      const uploadTask = firebase.storage().ref('img/' + file[i].name + Date.now()).put(file[i], metadata);
+      uploadTask.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
         (snapshot) => {
-          // in progress
           const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+          console.log(snap);
         },
         (error) => {
           console.log(error);
         },
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
-            this.picture = downloadURL;
-            this.arrayPicture += this.picture + ' ';
-            console.log('>>> ' + this.arrayPicture);
+            this.arrayPicture += downloadURL + ' ';
           });
-        }
-      );
+        });
+      i++;
     }
   }
-
 }

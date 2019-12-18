@@ -42,19 +42,19 @@ export class HouseService {
     return houseList;
   }
 
-  public convertHouseId(id: number): HouseConvertById {
-    // this.houseListDetail.splice(1);
-    this.getHouseId(id).subscribe(result => {
-      const house: DataHouseDetails = result.data;
-      const arrayPicture = house.picture.split(' ');
-      // console.log(result);
-      const houseDetail = new HouseConvertById(house.id, house.name, house.catName, arrayPicture, house.address,
-        house.bedroomNumber, house.bathroomNumber, house.description, house.price, house.area, house.userName, house.userId);
-      this.houseListDetail[0] = houseDetail;
-    });
-    console.log(this.houseListDetail[0]);
-    return this.houseListDetail[0];
-  }
+  // public convertHouseId(id: number): HouseConvertById {
+  //   // this.houseListDetail.splice(1);
+  //   this.getHouseId(id).subscribe(result => {
+  //     const house: DataHouseDetails = result.data;
+  //     const arrayPicture = house.picture.split(' ');
+  //     // console.log(result);
+  //     const houseDetail = new HouseConvertById(house.id, house.name, house.catName, arrayPicture, house.address,
+  //       house.bedroomNumber, house.bathroomNumber, house.description, house.price, house.area, house.userName, house.userId);
+  //     this.houseListDetail[0] = houseDetail;
+  //   });
+  //   console.log(this.houseListDetail[0]);
+  //   return this.houseListDetail[0];
+  // }
 
 
   public getList(): Observable<House> {
