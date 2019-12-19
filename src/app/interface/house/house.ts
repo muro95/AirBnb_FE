@@ -1,4 +1,4 @@
-import {DataHouseList} from './dataHouseList';
+import {DataHouseList} from '../../components/user/home-list-for-guest/house-list/dataHouseList';
 
 
 
