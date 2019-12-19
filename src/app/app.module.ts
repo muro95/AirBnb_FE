@@ -7,24 +7,22 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import { UserComponent } from './components/user/user.component';
-import { PmComponent } from './components/pm/pm.component';
-import { AdminComponent } from './components/admin/admin.component';
+import {UserComponent} from './components/user/user.component';
+import {PmComponent} from './components/pm/pm.component';
+import {AdminComponent} from './components/admin/admin.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
-import { HomeDetailComponent } from './components/home-detail/home-detail.component';
+import {HomeDetailComponent} from './components/home-detail/home-detail.component';
 import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
 
-import { RegisterHostComponent } from './components/register-host/register-host.component';
+import {RegisterHostComponent} from './components/register-host/register-host.component';
 import {AddHouseComponent} from './components/add-house/add-house.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {HeaderComponent} from './components/header/header.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {OrderModule} from 'ngx-order-pipe';
-import { BookingComponent } from './components/booking/booking.component';
-
-
+import {BookingComponent} from './components/booking/booking.component';
 
 
 const routes: Routes = [
