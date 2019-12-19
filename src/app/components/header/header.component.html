@@ -28,26 +28,36 @@
           <label class="nav-link" routerLink="/register-host">Resort</label>
         </li>
 
-        <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/category-list">Category House</label>
+<!--        <li class="nav-item" *ngIf="authority === 'host'">-->
+<!--          <label class="nav-link" routerLink="/home/category-list">Category House</label>-->
+<!--        </li>-->
+        <li class="nav-item dropdown" *ngIf="authority === 'host'">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Management
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/home/add-house">Add house</a>
+            <a class="dropdown-item" routerLink="/home/house-of-host">House Lists</a>
+            <a class="dropdown-item" routerLink="/home/category-list">Category House</a>
+          </div>
         </li>
-
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link">Manage House</label>
+          <label class="nav-link" routerLink="/home/house-of-host" >Manage House</label>
         </li>
 
         <li class="nav-item" *ngIf="!authority">
           <label class="nav-link" routerLink="/register-host">Register for Host</label>
         </li>
-        <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/add-house">Add House</label>
-        </li>
+<!--        <li class="nav-item" *ngIf="authority === 'host'">-->
+<!--          <label class="nav-link" routerLink="/home/add-house">Add House</label>-->
+<!--        </li>-->
         <li class="nav-item" *ngIf="!authority">
           <label class="nav-link" routerLink="/register">Register for User</label>
         </li>
-        <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/house-of-host">Host</label>
-        </li>
+<!--        <li class="nav-item" *ngIf="authority === 'host'">-->
+<!--          <label class="nav-link" >Host</label>-->
+<!--        </li>-->
         <li class="nav-item" *ngIf="authority === 'host'">
           <label class="nav-link" routerLink="/register">Messages</label>
         </li>

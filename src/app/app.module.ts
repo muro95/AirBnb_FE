@@ -26,6 +26,7 @@ import { CategoryHouseComponent } from './components/category-house/category-hou
 import { CancelOrderComponent } from './components/user/list-order-of-user/cancel-order/cancel-order.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // npm install --save @angular/material @angular/cdk @angular/animations
 
@@ -52,7 +53,8 @@ const routes: Routes = [
     ListHouseOfHostComponent,
     ListOrderOfUserComponent,
     CategoryHouseComponent,
-    CancelOrderComponent
+    CancelOrderComponent,
+    ProfileComponent
   ],
   imports: [
     Ng2SearchPipeModule,

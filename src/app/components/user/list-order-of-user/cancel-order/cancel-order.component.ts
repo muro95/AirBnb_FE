@@ -20,10 +20,10 @@ export class CancelOrderComponent implements OnInit {
   public cancelClicked = false;
 
   constructor(
-              private activatedRoute: ActivatedRoute,
-              private token: TokenStorageService,
-              private router: Router,
-              private userService: UserService) {
+    private activatedRoute: ActivatedRoute,
+    private token: TokenStorageService,
+    private router: Router,
+    private userService: UserService) {
     this.activatedRoute.params.subscribe(params => {
       this.id = params.id;
       console.log('param id : ' + this.id);
@@ -73,7 +73,7 @@ export class CancelOrderComponent implements OnInit {
 
   cancel() {
     console.log('param id to can cel: ' + this.id);
-    this.userService.cancelOrder(10).subscribe(next => {
+    this.userService.cancelOrder(this.id).subscribe(next => {
       this.message = 'Đã hủy';
     }, error => {
       this.message = 'Hủy không thành công';
