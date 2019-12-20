@@ -11,6 +11,7 @@ export class DataHouseDetails {
   private _area: string; // tslint:disable-next-line:variable-name
   private _userName: string; // tslint:disable-next-line:variable-name
   private _userId: string;
+  // tslint:disable-next-line:variable-name
   private _picture: string;
 
 

@@ -33,6 +33,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {ProfileComponent} from './components/profile/profile.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
 
 
 // npm install --save @angular/material @angular/cdk @angular/animations
@@ -63,7 +65,9 @@ const routes: Routes = [
     ListOrderOfUserComponent,
     CategoryHouseComponent,
     CancelOrderComponent,
-    ProfileComponent
+    ProfileComponent,
+    CommentComponent,
+    CommentListComponent
   ],
   imports: [
     Ng2SearchPipeModule,

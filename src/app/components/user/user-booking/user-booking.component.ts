@@ -45,6 +45,7 @@ export class UserBookingComponent implements OnInit {
   ngOnInit() {
 
     this.getHouseId();
+
     this.info = {
       id: this.token.getUserId(),
       token: this.token.getToken(),
@@ -72,6 +73,7 @@ export class UserBookingComponent implements OnInit {
     });
 
   }
+
 
   onSubmit() {
 
