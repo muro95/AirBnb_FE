@@ -3,16 +3,16 @@ export class DataUserBooking {
   private _checkin: Date;
   private _checkout: Date;
   private _numberGuest: number;
-  private _cost: string;
+  private _children: string;
   private _orderTime: Date;
 
 
-  constructor(id: number, checkin: Date, checkout: Date, numberGuest: number, cost: string, orderTime: Date) {
+  constructor(id: number, checkin: Date, checkout: Date, numberGuest: number, children: string, orderTime: Date) {
     this._id = id;
     this._checkin = checkin;
     this._checkout = checkout;
     this._numberGuest = numberGuest;
-    this._cost = cost;
+    this._children = children;
     this._orderTime = orderTime;
   }
 
@@ -48,12 +48,12 @@ export class DataUserBooking {
     this._numberGuest = value;
   }
 
-  get cost(): string {
-    return this._cost;
+  get children(): string {
+    return this._children;
   }
 
-  set cost(value: string) {
-    this._cost = value;
+  set children(value: string) {
+    this._children = value;
   }
 
   get orderTime(): Date {

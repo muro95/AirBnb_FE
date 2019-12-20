@@ -58,7 +58,7 @@ export class UserBookingComponent implements OnInit {
       checkin: new FormControl('', Validators.required),
       checkout: new FormControl(''),
       numberGuest: new FormControl(''),
-      cost: new FormControl(''),
+      children: new FormControl(''),
       orderTime: this.today,
     });
 
