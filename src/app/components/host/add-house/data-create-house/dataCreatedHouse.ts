@@ -6,6 +6,7 @@ export class DataCreatedHouse {
   // tslint:disable-next-line:variable-name
   private _picture: string;
 
+  // tslint:disable-next-line:variable-name
   private _address: string;
   // tslint:disable-next-line:variable-name
   private _bedroomNumber: string;

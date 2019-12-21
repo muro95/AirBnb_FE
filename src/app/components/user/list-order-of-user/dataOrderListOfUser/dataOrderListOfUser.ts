@@ -13,10 +13,12 @@ export class DataOrderListOfUser {
   private _houseId: number;
   // tslint:disable-next-line:variable-name
   private _houseName: string;
+  // tslint:disable-next-line:variable-name
   private _children: string;
 
 
-  constructor(id: number, checkin: Date, checkout: Date, numberGuest: number, orderTime: Date, houseId: number, houseName: string, children: string) {
+  constructor(id: number, checkin: Date, checkout: Date, numberGuest: number,
+              orderTime: Date, houseId: number, houseName: string, children: string) {
     this._id = id;
     this._checkin = checkin;
     this._checkout = checkout;

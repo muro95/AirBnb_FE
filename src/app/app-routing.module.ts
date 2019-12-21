@@ -13,6 +13,7 @@ import {ListOrderOfUserComponent} from './components/user/list-order-of-user/lis
 import {CategoryHouse} from './components/category-house/data-category/categoryHouse';
 import {CategoryHouseComponent} from './components/category-house/category-house.component';
 import {CancelOrderComponent} from './components/user/list-order-of-user/cancel-order/cancel-order.component';
+import {DeleteHouseComponent} from './components/host/delete-house/delete-house.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'home/house-of-host',
     component: ListHouseOfHostComponent
+  },
+  {
+    path: 'home/house-of-host/delete/:houseId',
+    component: DeleteHouseComponent
   },
   {
     path: 'home/list-order-of-user',

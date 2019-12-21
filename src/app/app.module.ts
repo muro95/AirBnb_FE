@@ -35,6 +35,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {ProfileComponent} from './components/profile/profile.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { DeleteHouseComponent } from './components/host/delete-house/delete-house.component';
 
 
 // npm install --save @angular/material @angular/cdk @angular/animations
@@ -67,7 +68,8 @@ const routes: Routes = [
     CancelOrderComponent,
     ProfileComponent,
     CommentComponent,
-    CommentListComponent
+    CommentListComponent,
+    DeleteHouseComponent
   ],
   imports: [
     Ng2SearchPipeModule,
