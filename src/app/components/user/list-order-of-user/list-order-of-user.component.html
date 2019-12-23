@@ -11,6 +11,7 @@
     <th scope="col">Check in</th>
     <th scope="col">Check out</th>
     <th scope="col">Người</th>
+    <th scope="col">Trẻ em</th>
     <th scope="col">Thời gian đặt</th>
     <th scope="col">Trạng thái</th>
     <th scope="col">
@@ -27,8 +28,9 @@
     <th>{{orderItem.checkin}}</th>
     <th>{{orderItem.checkout}}</th>
     <th>{{orderItem.numberGuest}}</th>
+    <th>{{orderItem.children}}</th>
     <th>{{orderItem.orderTime}}</th>
-
+    <th>Available</th>
     <th>
       <a class="add-to-cart" [routerLink]="['cancel', orderItem.id]">Cancel</a>
     </th>

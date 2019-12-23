@@ -66,11 +66,13 @@ export class HouseService {
   }
 
 
-
   public addHouse(house: DataCreatedHouse): Observable<DataCreatedHouse> {
     return this.httpClient.post<DataCreatedHouse>(this.API_URL + 'host/houses', house);
   }
 
+  public deleteHouse(id: number): Observable<DataCreatedHouse> {
+    return this.httpClient.delete<DataCreatedHouse>(this.API_URL + 'host/houses/' + id) ;
+  }
 
   public getListHouseOfHost(): Observable<HouseListOfHost> {
     return this.httpClient.get<HouseListOfHost>(this.API_URL + 'host/houses');

@@ -6,6 +6,7 @@ import {FormBuilder} from '@angular/forms';
 import {HouseListOfHost} from './house-list-of-host/houseListOfHost';
 import {HouseDetails} from '../../home-detail/house-details/houseDetails';
 import {CategoryHouse} from '../../category-house/data-category/categoryHouse';
+import {error} from 'util';
 
 
 @Component({
@@ -45,6 +46,8 @@ export class ListHouseOfHostComponent implements OnInit {
       console.log('>>>>>houseList of host' + JSON.stringify(this.houseListOfHost));
     });
   }
+
+
 
   private getCategoryList() {
     this.houseService.getListCategory().subscribe(result => {

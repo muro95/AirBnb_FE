@@ -39,7 +39,7 @@ export class UserService {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + window.sessionStorage.getItem('TOKEN_KEY')
     });
-    return this.httpClient.delete<OrderListOfUser>(`http://localhost:8080/api/me/orders/${id}/delete`, {headers});
+    return this.httpClient.get<OrderListOfUser>(this.API_URL + 'me/orders/' + id + '/delete', {headers});
   }
 
   public getOrderById(id: number): Observable<OrderListOfUser> {
