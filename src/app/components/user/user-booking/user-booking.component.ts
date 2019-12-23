@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HouseService} from '../../../services/house/house.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HouseDetails} from '../../home-detail/house-details/houseDetails';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserBooking} from './data-user-booking/userBooking';
@@ -20,7 +20,8 @@ export class UserBookingComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private formBuilder: FormBuilder,
               private token: TokenStorageService,
-              private userService: UserService) {
+              private userService: UserService,
+              private route: Router) {
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
     this.activatedRoute.params.subscribe(params => {
       this.id = params.houseId;
@@ -90,6 +91,8 @@ export class UserBookingComponent implements OnInit {
       });
     }
 
-    alert('SUCCESS!! :-)');
+    alert('Bạn đã đặt thành công');
+
   }
+
 }
