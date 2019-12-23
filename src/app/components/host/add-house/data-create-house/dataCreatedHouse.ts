@@ -1,28 +1,18 @@
 export class DataCreatedHouse {
-// tslint:disable-next-line:variable-name
-  private _houseName: string;
-  // tslint:disable-next-line:variable-name
-  private _category: number;
-  // tslint:disable-next-line:variable-name
-  private _picture: string;
 
   // tslint:disable-next-line:variable-name
-  private _address: string;
-  // tslint:disable-next-line:variable-name
-  private _bedroomNumber: string;
-  // tslint:disable-next-line:variable-name
-  private _bathroomNumber: string;
-  // tslint:disable-next-line:variable-name
-  private _description: string;
-  // tslint:disable-next-line:variable-name
-  private _price: string;
-  // tslint:disable-next-line:variable-name
-  private _area: string;
-  // tslint:disable-next-line:variable-name
-  private _user: string;
+  private _id: number;
 
+  get id(): number {
+    return this._id;
+  }
 
-  constructor(houseName: string, category: number, picture: string, address: string, bedroomNumber: string, bathroomNumber: string, description: string, price: string, area: string, user: string) {
+  set id(value: number) {
+    this._id = value;
+  }
+
+  constructor(id: number, houseName: string, category: number, picture: string, address: string, bedroomNumber: string, bathroomNumber: string, description: string, price: string, area: string, user: string) {
+    this._id = id;
     this._houseName = houseName;
     this._category = category;
     this._picture = picture;
@@ -35,6 +25,8 @@ export class DataCreatedHouse {
     this._user = user;
   }
 
+// tslint:disable-next-line:variable-name
+  private _houseName: string;
 
   get houseName(): string {
     return this._houseName;
@@ -44,6 +36,9 @@ export class DataCreatedHouse {
     this._houseName = value;
   }
 
+  // tslint:disable-next-line:variable-name
+  private _category: number;
+
   get category(): number {
     return this._category;
   }
@@ -51,6 +46,9 @@ export class DataCreatedHouse {
   set category(value: number) {
     this._category = value;
   }
+
+  // tslint:disable-next-line:variable-name
+  private _picture: string;
 
   get picture(): string {
     return this._picture;
@@ -60,6 +58,9 @@ export class DataCreatedHouse {
     this._picture = value;
   }
 
+  // tslint:disable-next-line:variable-name
+  private _address: string;
+
   get address(): string {
     return this._address;
   }
@@ -67,6 +68,9 @@ export class DataCreatedHouse {
   set address(value: string) {
     this._address = value;
   }
+
+  // tslint:disable-next-line:variable-name
+  private _bedroomNumber: string;
 
   get bedroomNumber(): string {
     return this._bedroomNumber;
@@ -76,6 +80,9 @@ export class DataCreatedHouse {
     this._bedroomNumber = value;
   }
 
+  // tslint:disable-next-line:variable-name
+  private _bathroomNumber: string;
+
   get bathroomNumber(): string {
     return this._bathroomNumber;
   }
@@ -83,6 +90,9 @@ export class DataCreatedHouse {
   set bathroomNumber(value: string) {
     this._bathroomNumber = value;
   }
+
+  // tslint:disable-next-line:variable-name
+  private _description: string;
 
   get description(): string {
     return this._description;
@@ -92,6 +102,9 @@ export class DataCreatedHouse {
     this._description = value;
   }
 
+  // tslint:disable-next-line:variable-name
+  private _price: string;
+
   get price(): string {
     return this._price;
   }
@@ -100,6 +113,9 @@ export class DataCreatedHouse {
     this._price = value;
   }
 
+  // tslint:disable-next-line:variable-name
+  private _area: string;
+
   get area(): string {
     return this._area;
   }
@@ -107,6 +123,9 @@ export class DataCreatedHouse {
   set area(value: string) {
     this._area = value;
   }
+
+  // tslint:disable-next-line:variable-name
+  private _user: string;
 
   get user(): string {
     return this._user;

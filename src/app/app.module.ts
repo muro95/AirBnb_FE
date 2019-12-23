@@ -36,6 +36,7 @@ import {ProfileComponent} from './components/profile/profile.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { DeleteHouseComponent } from './components/host/delete-house/delete-house.component';
+import { EditHouseComponent } from './components/host/edit-house/edit-house.component';
 
 
 // npm install --save @angular/material @angular/cdk @angular/animations
@@ -69,7 +70,8 @@ const routes: Routes = [
     ProfileComponent,
     CommentComponent,
     CommentListComponent,
-    DeleteHouseComponent
+    DeleteHouseComponent,
+    EditHouseComponent
   ],
   imports: [
     Ng2SearchPipeModule,

@@ -1,44 +1,44 @@
 <h1> List of houses</h1>
 <div class="container">
 
-<!--  <div *ngIf="house">-->
-<!--    <div class="search-house">-->
-<!--      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">-->
-<!--    </div>-->
-<!--    <div class="row">-->
+  <div *ngIf="house">
+    <div class="search-house">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+    </div>
+    <div class="row">
 
-<!--      <div class="col-sm-4"-->
-<!--           *ngFor="let houseItem of house   | filter: searchText| paginate: {itemsPerPage: 9, currentPage: pageActual}; index as i">-->
-<!--        <div class="card" style="width: 18rem" routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">-->
-<!--          <img   src="{{houseItem.picture[0]}}"-->
-<!--               class="card-img-top" alt="">-->
-<!--          <div class="card-body">-->
-<!--            <p class="card-text">-->
-<!--              Name: {{ houseItem.name }}-->
-<!--            </p>-->
-<!--            <label>-->
-<!--              Address: {{houseItem.address}}-->
-<!--            </label>-->
-<!--            <div id="priceHouseItem"> Price: {{houseItem.price}}</div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-  <div *ngIf="house" class="w3-content w3-padding" style="max-width:1564px">
-        <div class="search-house">
-          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
-        </div>
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom"  *ngFor="let houseItem of house   | filter: searchText |
-       paginate: {itemsPerPage: 12, currentPage: pageActual}; index as i"
-           routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">{{houseItem.name}}</div>
-          <img src="{{houseItem.picture[0]}}" alt="House" style="width:100%;height: 200px">
+      <div class="col-sm-4"
+           *ngFor="let houseItem of house   | filter: searchText| paginate: {itemsPerPage: 9, currentPage: pageActual}; index as i">
+        <div class="card" style="width: 18rem" routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">
+          <img   src="{{houseItem.picture[0]}}"
+               class="card-img-top" alt="">
+          <div class="card-body">
+            <p class="card-text">
+              Name: {{ houseItem.name }}
+            </p>
+            <label>
+              Address: {{houseItem.address}}
+            </label>
+            <div id="priceHouseItem"> Price: {{houseItem.price}}</div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+<!--  <div *ngIf="house" class="w3-content w3-padding" style="max-width:1564px">-->
+<!--        <div class="search-house">-->
+<!--          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">-->
+<!--        </div>-->
+<!--    <div class="w3-row-padding">-->
+<!--      <div class="w3-col l3 m6 w3-margin-bottom"  *ngFor="let houseItem of house   | filter: searchText |-->
+<!--       paginate: {itemsPerPage: 12, currentPage: pageActual}; index as i"-->
+<!--           routerLink="/home/{{houseItem.id}}/{{houseItem.name}}">-->
+<!--        <div class="w3-display-container">-->
+<!--          <div class="w3-display-topleft w3-black w3-padding">{{houseItem.name}}</div>-->
+<!--          <img src="{{houseItem.picture[0]}}" alt="House" style="width:100%;height: 200px">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
 
@@ -48,5 +48,5 @@
     <pagination-controls (pageChange)="pageActual = $event"
     ></pagination-controls>
   </div>
-</div>
+<!--</div>-->
 <router-outlet></router-outlet>

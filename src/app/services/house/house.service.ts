@@ -70,8 +70,12 @@ export class HouseService {
     return this.httpClient.post<DataCreatedHouse>(this.API_URL + 'host/houses', house);
   }
 
+  public editHouse(house: DataCreatedHouse, id: number): Observable<DataCreatedHouse> {
+    return this.httpClient.put<DataCreatedHouse>(this.API_URL + 'host/houses/' + id, house);
+  }
+
   public deleteHouse(id: number): Observable<DataCreatedHouse> {
-    return this.httpClient.delete<DataCreatedHouse>(this.API_URL + 'host/houses/' + id) ;
+    return this.httpClient.delete<DataCreatedHouse>(this.API_URL + 'host/houses/' + id);
   }
 
   public getListHouseOfHost(): Observable<HouseListOfHost> {
