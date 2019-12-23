@@ -87,16 +87,26 @@ export class EditHouseComponent implements OnInit {
   editHouse() {
     this.submitted = true;
     this.houseData = this.houseForm.value;
-   // this.arrayPicture = this.arrayPicture.trim();
+    // this.arrayPicture = this.arrayPicture.trim();
     this.houseData.picture = this.arrayPicture;
     console.log(this.houseData);
     const house = this.houseForm.value;
 
     // stop here if form is invalid
-    if (this.houseForm) {
+    // if (this.houseForm.invalid) {
+    //   return this.houseService.editHouse(this.houseData, this.id).subscribe(result => {
+    //     this.isSuccess = true;
+    //     // this.router.navigate(['/home/house-list-for-guest']);
+    //   });
+    // }
+    if (this.houseForm.invalid) {
       return this.houseService.editHouse(this.houseData, this.id).subscribe(result => {
-        this.isSuccess = true;
+        this.isSuccess = false;
         // this.router.navigate(['/home/house-list-for-guest']);
+      });
+    } else {
+      this.houseService.editHouse(house, this.id).subscribe(result => {
+        this.isSuccess = true;
       });
     }
 
