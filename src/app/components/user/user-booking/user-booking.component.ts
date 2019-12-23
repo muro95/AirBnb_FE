@@ -16,6 +16,18 @@ import {UserService} from '../../../services/user/user.service';
 })
 export class UserBookingComponent implements OnInit {
 
+  id: number;
+  isSuccess = false;
+  form: any = {};
+  booking: UserBooking;
+  house: HouseDetails;
+  bookingForm: FormGroup;
+  today = new Date();
+  jstoday = '';
+  submitted = false;
+  private houseId: string;
+  private info: any = {};
+
   constructor(private houseService: HouseService,
               private activatedRoute: ActivatedRoute,
               private formBuilder: FormBuilder,
@@ -27,21 +39,6 @@ export class UserBookingComponent implements OnInit {
       this.id = params.houseId;
     });
   }
-
-  private houseId: string;
-  private info: any = {};
-  id: number;
-  isSuccess = false;
-  form: any = {};
-  booking: UserBooking;
-  house: HouseDetails;
-
-  bookingForm: FormGroup;
-  today = new Date();
-  jstoday = '';
-
-  submitted = false;
-
 
   ngOnInit() {
 
@@ -82,16 +79,11 @@ export class UserBookingComponent implements OnInit {
     const booking = this.bookingForm.value;
 
     // stop here if form is invalid
-    if (this.bookingForm.invalid) {
-      return this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
-        this.isSuccess = false;
-        // this.router.navigate(['/home/house-list-for-guest']);
-      });
-    } else {
-      this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
-        this.isSuccess = true;
-      });
-    }
+
+    this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
+      // this.router.navigate(['/home/house-list-for-guest']);
+    });
+
 
     alert('Bạn đã đặt thành công');
 
