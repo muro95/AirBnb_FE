@@ -37,6 +37,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { DeleteHouseComponent } from './components/host/delete-house/delete-house.component';
 import { EditHouseComponent } from './components/host/edit-house/edit-house.component';
+import { ListOrderComponent } from './components/host/list-order/list-order.component';
 
 
 // npm install --save @angular/material @angular/cdk @angular/animations
@@ -71,7 +72,8 @@ const routes: Routes = [
     CommentComponent,
     CommentListComponent,
     DeleteHouseComponent,
-    EditHouseComponent
+    EditHouseComponent,
+    ListOrderComponent
   ],
   imports: [
     Ng2SearchPipeModule,

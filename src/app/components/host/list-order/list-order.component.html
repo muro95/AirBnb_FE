@@ -28,8 +28,8 @@
     <th>{{orderItem.checkin| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
     <th>{{orderItem.checkout| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
     <th>{{orderItem.numberGuest}}</th>
-    <th>{{orderItem.children}}</th>
-    <th>{{orderItem.orderTime| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
+    <th>{{orderItem.children| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
+    <th>{{orderItem.orderTime}}</th>
     <th>Available</th>
     <th>
       <a class="add-to-cart" [routerLink]="['cancel', orderItem.id]">Cancel</a>

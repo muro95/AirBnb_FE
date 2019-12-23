@@ -34,6 +34,9 @@ export class UserService {
   public getListOrderOfUser(): Observable<OrderListOfUser> {
     return this.httpClient.get<OrderListOfUser>(this.API_URL + 'me/orders');
   }
+  public getListOrderForHost(): Observable<OrderListOfUser> {
+    return this.httpClient.get<OrderListOfUser>(this.API_URL + 'host/house/orderOfUser/');
+  }
 
   public cancelOrder(id: number): Observable<OrderListOfUser> {
     const headers = new HttpHeaders({

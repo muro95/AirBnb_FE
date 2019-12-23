@@ -34,7 +34,7 @@ export class UserBookingComponent implements OnInit {
               private token: TokenStorageService,
               private userService: UserService,
               private route: Router) {
-    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
+    this.jstoday = formatDate(this.today, 'dd-MM-yyyy', 'en-US', '+0530');
     this.activatedRoute.params.subscribe(params => {
       this.id = params.houseId;
     });
@@ -81,9 +81,9 @@ export class UserBookingComponent implements OnInit {
     // stop here if form is invalid
 
     this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
+      this.isSuccess = false;
       // this.router.navigate(['/home/house-list-for-guest']);
     });
-
 
     alert('Bạn đã đặt thành công');
 
