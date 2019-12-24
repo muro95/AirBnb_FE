@@ -31,6 +31,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 // npm install --save @angular/material @angular/cdk @angular/animations
 
@@ -57,7 +58,8 @@ const routes: Routes = [
     ListHouseOfHostComponent,
     ListOrderOfUserComponent,
     CategoryHouseComponent,
-    CancelOrderComponent
+    CancelOrderComponent,
+    ProfileComponent
   ],
   imports: [
     Ng2SearchPipeModule,
@@ -74,7 +76,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
