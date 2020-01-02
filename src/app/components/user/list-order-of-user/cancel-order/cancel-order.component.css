@@ -1,0 +1,10 @@
+.table-bordered {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.btn-choice {
+  padding: 10px;
+ text-align: center;
+}

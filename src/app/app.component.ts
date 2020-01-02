@@ -12,7 +12,9 @@ export class AppComponent {
   title = 'Case-Study';
   private info: any;
 
-  constructor(private token: TokenStorageService, private router: Router) { }
+  constructor(
+    private token: TokenStorageService, private router: Router) {
+  }
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
@@ -29,5 +31,7 @@ export class AppComponent {
     // window.location.reload();
     this.router.navigateByUrl('/home');
   }
+
+
 }
 

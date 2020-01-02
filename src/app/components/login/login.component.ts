@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
       responseJWT => {
         console.log('get UserName from BE:' + responseJWT.data.username);
         console.log('get token from BE:' + responseJWT.data.accessToken);
+        this.tokenStorage.saveId(responseJWT.data.id);
         this.tokenStorage.saveToken(responseJWT.data.accessToken);
         this.tokenStorage.saveUsername(responseJWT.data.username);
         this.tokenStorage.saveAuthorities(responseJWT.data.roles);
@@ -62,6 +63,7 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
         this.navbar.ngOnInit();
+        console.log('>>>>' + this.tokenStorage);
         // this.reloadPage();
         this.router.navigateByUrl('/');
       },

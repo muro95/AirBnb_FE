@@ -11,21 +11,19 @@
       </div>
       <!--  <a style="font-weight: bold" class="navbar-brand" routerLink="/home">AirBnb</a>-->
       <ul class="nav nav-pills">
-        <li class="nav-item dropdown" *ngIf="!authority">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false">Airbnb Page
-          </a>
-          <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-            <a class="dropdown-item" routerLink="/home/house-list-for-guest">House List</a>
-            <a class="dropdown-item" routerLink="/home/add-house">Add House</a>
-          </div>
-        </li>
 
+        <li class="nav-item" *ngIf="authority === 'user'">
+          <label class="nav-link" routerLink="/home/category-list">Category House</label>
+        </li>
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/home/house-list-for-guest">View List House</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
+<<<<<<< HEAD
           <label class="nav-link" routerLink="/booking">Booking</label>
+=======
+          <label class="nav-link" routerLink="/home/list-order-of-user">List Order</label>
+>>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/register-host">Home Stay</label>
@@ -38,8 +36,13 @@
         </li>
 
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/house-list-for-guest">House List</label>
+          <label class="nav-link" routerLink="/home/category-list">Category House</label>
         </li>
+
+        <li class="nav-item" *ngIf="authority === 'host'">
+          <label class="nav-link">Manage House</label>
+        </li>
+
         <li class="nav-item" *ngIf="!authority">
           <label class="nav-link" routerLink="/register-host">Register for Host</label>
         </li>
@@ -50,7 +53,7 @@
           <label class="nav-link" routerLink="/register">Register for User</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/register">Host</label>
+          <label class="nav-link" routerLink="/home/house-of-host">Host</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'host'">
           <label class="nav-link" routerLink="/register">Messages</label>
@@ -77,26 +80,6 @@
 <!--            <a class="dropdown-item" (click)="logout()">Logout</a>-->
           </div>
         </li>
-        <!--          <li class="nav-item dropdown" *ngIf="authority ==='user'&&info.username">-->
-        <!--            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-        <!--                    aria-expanded="false">User {{info.username}}-->
-        <!--            </button>-->
-        <!--            <div class="dropdown-menu" id="dropdownMenu1">-->
-        <!--              <a class="dropdown-item" routerLink="/information">Information</a>-->
-        <!--              <a class="dropdown-item" routerLink="/login">Login</a>-->
-        <!--              <a class="dropdown-item" (click)="logout()">Logout</a>-->
-        <!--            </div>-->
-        <!--          </li>-->
-
-        <!--          <li class="nav-item dropdown" *ngIf="authority === 'host'&&info.username">-->
-        <!--            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-        <!--                    aria-expanded="false">Host {{info.username}}</button>-->
-        <!--            <div class="dropdown-menu" id="dropdownMenu2">-->
-        <!--              <a class="dropdown-item" routerLink="/information">Information</a>-->
-        <!--              <a class="dropdown-item" routerLink="/login">Login</a>-->
-        <!--              <a class="dropdown-item" (click)="logout()">Logout</a>-->
-        <!--            </div>-->
-        <!--          </li>-->
       </ul>
     </nav>
   </div>
@@ -104,99 +87,3 @@
 
 
 <router-outlet></router-outlet>
-
-<!--<div class="header col-md-12">-->
-<!--  <div class="row">-->
-<!--    <div id="logo" class="nav-item">-->
-<!--      <img src="../assets/images/airbnb-3383993_960_720.png" alt="" routerLink="/home">-->
-<!--    </div>-->
-<!--    <div class="col-md-6 nav-item" id="input-search">-->
-<!--      <input type="text" class="glyphicon glyphicon-search" placeholder='Try "London"'>-->
-<!--    </div>-->
-<!--    <div class="col-md-5" id="navbar">-->
-<!--      <ul class="nav navbar-toggler">-->
-<!--        <li class="nav-item col-md-4">-->
-<!--          <a class="nav-link active" href="#">Become host</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown col-md-4">-->
-<!--          <a class="nav-link dropdown-toggle" id="AirBnb-Page" href="#" id="navbarDropdown" role="button"-->
-<!--             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--            AirBnb Page-->
-<!--          </a>-->
-<!--          <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--            <a class="dropdown-item">ListHome</a>-->
-<!--            <a class="dropdown-item">View Home</a>-->
-<!--            <a class="dropdown-item" (click)="logout()">Logout</a>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li class="nav-item col-md-3">-->
-<!--          <a class="nav-link" routerLink="/register">Sign up</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a class="nav-link" routerLink="/login" tabindex="-1">Login</a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--Navbar-->
-<!--<div class="navbar-header">-->
-<!--  <nav class="navbar navbar-expand-md navbar-light bg-light">-->
-<!--    <div class="container-fluid">-->
-<!--      <div>-->
-<!--        <img src="https://i1.wp.com/ebenezersuites.com/wp-content/uploads/2016/06/airbnb-logo-266x300@2x.png" alt=""-->
-<!--             height="60" routerLink="/home">-->
-<!--      </div>-->
-<!--      <div class="col-md-4">-->
-<!--        <div class="md-form my-0 search-header">-->
-<!--          <i class="fa fa-search" aria-hidden="true"></i>-->
-<!--          <input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-7">-->
-<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">-->
-<!--          <ul class="navbar-nav mr-auto">-->
-<!--            <li class="nav-item col-md-4 navbar-airbnb">-->
-<!--              <a class="nav-link" routerLink="/register-host">Become host-->
-<!--                <span class="sr-only">(current)</span>-->
-<!--              </a>-->
-<!--            </li>-->
-<!--            <li class="nav-item dropdown col-md-4">-->
-<!--&lt;!&ndash;              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"&ndash;&gt;-->
-<!--                 aria-haspopup="true" aria-expanded="false">Airbnb Page-->
-<!--              </a>-->
-<!--              <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">-->
-<!--                <a class="dropdown-item" routerLink="/home/house-list-for-guest">House List</a>-->
-<!--                <a class="dropdown-item" href="#">View House</a>-->
-<!--              </div>-->
-<!--            </li>-->
-<!--            <li class="nav-item col-3">-->
-<!--              <a class="nav-link" routerLink="/register">Sign up</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--              <a class="nav-link" routerLink="/login">Login</a>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-2">-->
-<!--        <ul class="navbar-nav ml-auto nav-flex-icons float-right">-->
-<!--          <li class="nav-item avatar dropdown">-->
-<!--            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"-->
-<!--               aria-haspopup="true" aria-expanded="false">-->
-<!--              <img class="rounded-circle z-depth-0"-->
-<!--                   alt="avatar image" height="60">-->
-<!--            </a>-->
-<!--            <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"-->
-<!--                 aria-labelledby="navbarDropdownMenuLink-55">-->
-<!--              <a class="dropdown-item"  routerLink="/login">Login</a>-->
-<!--              <a class="dropdown-item" href="#">Logout</a>-->
-<!--              <a class="dropdown-item" href="#">Register</a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;/.Navbar &ndash;&gt;-->
-<!--  </nav>-->
-<!--</div>-->

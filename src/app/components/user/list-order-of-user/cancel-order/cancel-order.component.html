@@ -1,0 +1,28 @@
+<div *ngIf="order" class="table-bordered">
+
+<div *ngIf="order.data" class="full-content">
+  <p>Bạn có chắc muốn xóa : <u class="text-danger"></u></p>
+  <table class="table table-bordered">
+    <tr>
+      <th><p>Tên nhà : </p></th>
+      <td>{{order.data.houseName}}</td>
+    </tr>
+    <tr>
+      <th><p>Check in : </p></th>
+      <td>{{order.data.checkin}}</td>
+    </tr>
+    <tr>
+      <th><p>Check out : </p></th>
+      <td>{{order.data.checkout}}</td>
+    </tr>
+  </table>
+  <div class="btn-choice">
+    <input  type="button" value="Cancel" class="btn btn-success" style="margin-left: 60px" (click)="cancel()">
+    <button type="button" value="Back" class="btn btn-success"
+            style="margin-left: 60px;"
+            routerLink="/home/list-order-of-user">Back
+    </button>
+  </div>
+</div>
+
+</div>
