@@ -12,7 +12,7 @@
     <th scope="col">Loại Nhà</th>
     <th scope="col">Giá</th>
     <th scope="col">Trạng Thái</th>
-    <th scope="col">Edit</th>
+    <th scope="col"></th>
   </tr>
   </thead>
   <tbody>
@@ -24,7 +24,9 @@
     <th>{{houseItem.categoryName}}</th>
     <th>{{houseItem.price}}</th>
     <th>{{houseItem.status}}</th>
-    <th><input type="button" value="Edit" routerLink="/home/house-of-host/{{houseItem.id}}/edit" class="btn btn-success"></th>
+    <th><input type="button" value="Edit" routerLink="/home/house-of-host/{{houseItem.id}}/edit" class="btn btn-success">
+      <input type="button" value="Delete" routerLink="/home/house-of-host/delete/{{houseItem.id}}" class="btn btn-success">
+    </th>
   </tr>
   </tbody>
 </table>

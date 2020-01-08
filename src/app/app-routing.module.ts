@@ -16,6 +16,7 @@ import {CancelOrderComponent} from './components/user/list-order-of-user/cancel-
 import {DeleteHouseComponent} from './components/host/delete-house/delete-house.component';
 import {EditHouseComponent} from './components/host/edit-house/edit-house.component';
 import {ListOrderComponent} from './components/host/list-order/list-order.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path: 'home/list-order-of-guest-each-house',
     component: ListOrderComponent
+  },
+  {
+    path: 'information',
+    component: ProfileComponent
   }
 ];
 

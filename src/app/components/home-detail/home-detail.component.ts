@@ -74,8 +74,8 @@ export class HomeDetailComponent implements OnInit {
         if (role === 'ROLE_HOST') {
           this.authority = 'host';
           return false;
-        } else if (role === 'ROLE_PM') {
-          this.authority = 'pm';
+        } else if (role === 'ROLE_USER') {
+          this.authority = 'user';
           return false;
         }
         this.authority = 'user';

@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {DataUserBooking} from '../../components/user/user-booking/data-user-booking/dataUserBooking';
 import {OrderListOfUser} from '../../components/user/list-order-of-user/dataOrderListOfUser/orderListOfUser';
 import {DataOrderListOfUser} from '../../components/user/list-order-of-user/dataOrderListOfUser/dataOrderListOfUser';
+import {UserInfo} from 'firebase';
+import {Information} from '../../components/profile/dataInfo/information';
 
 
 @Injectable({
@@ -50,5 +52,9 @@ export class UserService {
       Authorization: 'Bearer ' + window.sessionStorage.getItem('TOKEN_KEY')
     });
     return this.httpClient.get<OrderListOfUser>(`http://localhost:8080/api/me/orders/${id}`, {headers});
+  }
+
+  public getUserInformation(): Observable<Information> {
+    return this.httpClient.get<Information>('http://localhost:8080/api/user/current');
   }
 }

@@ -13,10 +13,10 @@
     <th scope="col">Người</th>
     <th scope="col">Trẻ em</th>
     <th scope="col">Thời gian đặt</th>
-    <th scope="col">Trạng thái</th>
-    <th scope="col">
+<!--    <th scope="col">Trạng thái</th>-->
+<!--    <th scope="col">-->
 
-    </th>
+<!--    </th>-->
   </tr>
   </thead>
   <tbody>
@@ -28,12 +28,12 @@
     <th>{{orderItem.checkin| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
     <th>{{orderItem.checkout| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
     <th>{{orderItem.numberGuest}}</th>
-    <th>{{orderItem.children| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
-    <th>{{orderItem.orderTime}}</th>
-    <th>Available</th>
-    <th>
-      <a class="add-to-cart" [routerLink]="['cancel', orderItem.id]">Cancel</a>
-    </th>
+    <th>{{orderItem.children}}</th>
+    <th>{{orderItem.orderTime| date: 'EEEE, d-M-yyyy, h:mm a'}}</th>
+<!--    <th>Available</th>-->
+<!--    <th>-->
+<!--      <a class="add-to-cart" [routerLink]="['cancel', orderItem.id]">Cancel</a>-->
+<!--    </th>-->
   </tr>
   </tbody>
 </table>

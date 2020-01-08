@@ -93,8 +93,7 @@ export class AddHouseComponent implements OnInit {
         this.isSuccess = true;
       });
     }
-
-    alert('SUCCESS!! :-)');
+    // alert('SUCCESS!! :-)');
   }
 
 
