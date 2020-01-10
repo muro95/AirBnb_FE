@@ -14,8 +14,11 @@ export class DataOrderListOfUser {
   // tslint:disable-next-line:variable-name
   private _houseName: string;
 
+  private _children: string;
 
-  constructor(id: number, checkin: Date, checkout: Date, numberGuest: number, orderTime: Date, houseId: number, houseName: string) {
+
+  constructor(id: number, checkin: Date, checkout: Date, numberGuest: number, orderTime: Date,
+              houseId: number, houseName: string, children: string) {
     this._id = id;
     this._checkin = checkin;
     this._checkout = checkout;
@@ -23,8 +26,17 @@ export class DataOrderListOfUser {
     this._orderTime = orderTime;
     this._houseId = houseId;
     this._houseName = houseName;
+    this._children = children;
   }
 
+
+  get children(): string {
+    return this._children;
+  }
+
+  set children(value: string) {
+    this._children = value;
+  }
 
   get id(): number {
     return this._id;

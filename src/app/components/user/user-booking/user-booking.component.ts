@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HouseService} from '../../../services/house/house.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HouseDetails} from '../../home-detail/house-details/houseDetails';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserBooking} from './data-user-booking/userBooking';
@@ -16,35 +16,34 @@ import {UserService} from '../../../services/user/user.service';
 })
 export class UserBookingComponent implements OnInit {
 
-  constructor(private houseService: HouseService,
-              private activatedRoute: ActivatedRoute,
-              private formBuilder: FormBuilder,
-              private token: TokenStorageService,
-              private userService: UserService) {
-    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
-    this.activatedRoute.params.subscribe(params => {
-      this.id = params.houseId;
-    });
-  }
-
-  private houseId: string;
-  private info: any = {};
   id: number;
   isSuccess = false;
   form: any = {};
   booking: UserBooking;
   house: HouseDetails;
-
   bookingForm: FormGroup;
   today = new Date();
   jstoday = '';
-
   submitted = false;
+  private houseId: string;
+  private info: any = {};
 
+  constructor(private houseService: HouseService,
+              private activatedRoute: ActivatedRoute,
+              private formBuilder: FormBuilder,
+              private token: TokenStorageService,
+              private userService: UserService,
+              private route: Router) {
+    this.jstoday = formatDate(this.today, 'dd-MM-yyyy', 'en-US', '+0530');
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params.houseId;
+    });
+  }
 
   ngOnInit() {
 
     this.getHouseId();
+
     this.info = {
       id: this.token.getUserId(),
       token: this.token.getToken(),
@@ -57,7 +56,7 @@ export class UserBookingComponent implements OnInit {
       checkin: new FormControl('', Validators.required),
       checkout: new FormControl(''),
       numberGuest: new FormControl(''),
-      cost: new FormControl(''),
+      children: new FormControl(''),
       orderTime: this.today,
     });
 
@@ -73,23 +72,21 @@ export class UserBookingComponent implements OnInit {
 
   }
 
+
   onSubmit() {
 
     this.submitted = true;
     const booking = this.bookingForm.value;
 
     // stop here if form is invalid
-    if (this.bookingForm.invalid) {
-      return this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
-        this.isSuccess = false;
-        // this.router.navigate(['/home/house-list-for-guest']);
-      });
-    } else {
-      this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
-        this.isSuccess = true;
-      });
-    }
 
-    alert('SUCCESS!! :-)');
+    this.userService.sendRequestBooking(booking, this.id).subscribe(result => {
+      this.isSuccess = false;
+      // this.router.navigate(['/home/house-list-for-guest']);
+    });
+
+    alert('Bạn đã đặt thành công');
+
   }
+
 }

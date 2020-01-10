@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {DataUserBooking} from '../../components/user/user-booking/data-user-booking/dataUserBooking';
 import {OrderListOfUser} from '../../components/user/list-order-of-user/dataOrderListOfUser/orderListOfUser';
 import {DataOrderListOfUser} from '../../components/user/list-order-of-user/dataOrderListOfUser/dataOrderListOfUser';
+import {UserInfo} from 'firebase';
+import {Information} from '../../components/profile/dataInfo/information';
 
 
 @Injectable({
@@ -34,12 +36,15 @@ export class UserService {
   public getListOrderOfUser(): Observable<OrderListOfUser> {
     return this.httpClient.get<OrderListOfUser>(this.API_URL + 'me/orders');
   }
+  public getListOrderForHost(): Observable<OrderListOfUser> {
+    return this.httpClient.get<OrderListOfUser>(this.API_URL + 'host/house/orderOfUser/');
+  }
 
   public cancelOrder(id: number): Observable<OrderListOfUser> {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + window.sessionStorage.getItem('TOKEN_KEY')
     });
-    return this.httpClient.delete<OrderListOfUser>(`http://localhost:8080/api/me/orders/${id}/delete`, {headers});
+    return this.httpClient.get<OrderListOfUser>(this.API_URL + 'me/orders/' + id + '/delete', {headers});
   }
 
   public getOrderById(id: number): Observable<OrderListOfUser> {
@@ -47,5 +52,9 @@ export class UserService {
       Authorization: 'Bearer ' + window.sessionStorage.getItem('TOKEN_KEY')
     });
     return this.httpClient.get<OrderListOfUser>(`http://localhost:8080/api/me/orders/${id}`, {headers});
+  }
+
+  public getUserInformation(): Observable<Information> {
+    return this.httpClient.get<Information>('http://localhost:8080/api/user/current');
   }
 }

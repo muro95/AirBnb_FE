@@ -40,27 +40,27 @@ export class AddHouseComponent implements OnInit {
   houseForm: FormGroup;
 
   ngOnInit() {
-    this.getCategoryList();
-    this.info = {
-      id: this.token.getUserId(),
-      token: this.token.getToken(),
-      username: this.token.getUsername(),
-      authorities: this.token.getAuthorities()
-    };
-    console.log('token from Browser:' + this.info.token);
-    this.houseForm = this.formBuilder.group({
-      houseName: new FormControl('', Validators.required),
-      category: new FormControl(this.category),
-      picture: new FormControl(''),
-      address: new FormControl('', Validators.required),
-      bedroomNumber: new FormControl('', Validators.required),
-      bathroomNumber: new FormControl('', Validators.required),
-      description: new FormControl(''),
-      price: new FormControl('', Validators.required),
-      area: new FormControl(''),
-      user: this.token.getUserId(),
-    });
-    console.log('>>>>get user now:' + this.token.getUserId());
+      this.getCategoryList();
+      this.info = {
+        id: this.token.getUserId(),
+        token: this.token.getToken(),
+        username: this.token.getUsername(),
+        authorities: this.token.getAuthorities()
+      };
+      console.log('token from Browser:' + this.info.token);
+      this.houseForm = this.formBuilder.group({
+        houseName: new FormControl('', Validators.required),
+        category: new FormControl(this.category),
+        picture: new FormControl(''),
+        address: new FormControl('', Validators.required),
+        bedroomNumber: new FormControl('', Validators.required),
+        bathroomNumber: new FormControl('', Validators.required),
+        description: new FormControl(''),
+        price: new FormControl('', Validators.required),
+        area: new FormControl(''),
+        user: this.token.getUserId(),
+      });
+      console.log('>>>>get user now:' + this.token.getUserId());
   }
 
   // convenience getter for easy access to form fields
@@ -93,8 +93,7 @@ export class AddHouseComponent implements OnInit {
         this.isSuccess = true;
       });
     }
-
-    alert('SUCCESS!! :-)');
+    // alert('SUCCESS!! :-)');
   }
 
 

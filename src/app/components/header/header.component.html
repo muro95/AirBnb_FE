@@ -6,9 +6,9 @@
              alt=""
              height="60" routerLink="/home">
       </div>
-      <div class="col-md-6">
-        <input class="form-control" type="text" placeholder="&#61442;  Search" aria-label="Search">
-      </div>
+      <!--      <div class="col-md-6">-->
+      <!--        <input class="form-control" type="text" placeholder="&#61442;  Search" aria-label="Search">-->
+      <!--      </div>-->
       <!--  <a style="font-weight: bold" class="navbar-brand" routerLink="/home">AirBnb</a>-->
       <ul class="nav nav-pills">
 
@@ -19,11 +19,7 @@
           <label class="nav-link" routerLink="/home/house-list-for-guest">View List House</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
-<<<<<<< HEAD
-          <label class="nav-link" routerLink="/booking">Booking</label>
-=======
           <label class="nav-link" routerLink="/home/list-order-of-user">List Order</label>
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
         </li>
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/register-host">Home Stay</label>
@@ -31,35 +27,42 @@
         <li class="nav-item" *ngIf="authority === 'user'">
           <label class="nav-link" routerLink="/register-host">Resort</label>
         </li>
-        <li class="nav-item" *ngIf="authority === 'user'">
-          <label class="nav-link" (click)="logout()">Logout</label>
-        </li>
 
-        <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/category-list">Category House</label>
+        <!--        <li class="nav-item" *ngIf="authority === 'host'">-->
+        <!--          <label class="nav-link" routerLink="/home/category-list">Category House</label>-->
+        <!--        </li>-->
+        <li class="nav-item dropdown" *ngIf="authority === 'host'">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Management
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/home/add-house">Add house</a>
+            <a class="dropdown-item" routerLink="/home/house-of-host">House Lists</a>
+            <a class="dropdown-item" routerLink="/home/category-list">Category House</a>
+          </div>
         </li>
-
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link">Manage House</label>
+          <label class="nav-link" routerLink="/home/house-of-host" >Manage House</label>
         </li>
 
         <li class="nav-item" *ngIf="!authority">
           <label class="nav-link" routerLink="/register-host">Register for Host</label>
         </li>
-        <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/add-house">Add House</label>
-        </li>
+        <!--        <li class="nav-item" *ngIf="authority === 'host'">-->
+        <!--          <label class="nav-link" routerLink="/home/add-house">Add House</label>-->
+        <!--        </li>-->
         <li class="nav-item" *ngIf="!authority">
           <label class="nav-link" routerLink="/register">Register for User</label>
         </li>
+        <!--        <li class="nav-item" *ngIf="authority === 'host'">-->
+        <!--          <label class="nav-link" >Host</label>-->
+        <!--        </li>-->
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/home/house-of-host">Host</label>
+          <label class="nav-link" routerLink="/home/list-order-of-guest-each-house">List Order Of Guest</label>
         </li>
         <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" routerLink="/register">Messages</label>
-        </li>
-        <li class="nav-item" *ngIf="authority === 'host'">
-          <label class="nav-link" (click)="logout()">Logout</label>
+          <label class="nav-link" routerLink="/register">Help</label>
         </li>
         <li class="nav-item dropdown">
           <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button"
@@ -73,11 +76,9 @@
                   aria-expanded="false" *ngIf="!authority">Account
           </button>
           <div class="dropdown-menu" id="dropdownMenu">
+            <a class="dropdown-item" routerLink="/information">Information</a>
             <a class="dropdown-item" routerLink="/login">Login</a>
-            <a class="dropdown-item" routerLink="/information">Profile</a>
-            <a class="dropdown-item" routerLink="/login">Account</a>
-            <a class="dropdown-item" routerLink="/login">Invite Friends</a>
-<!--            <a class="dropdown-item" (click)="logout()">Logout</a>-->
+            <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </li>
       </ul>

@@ -1,15 +1,11 @@
 import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/user/register-user/register.component';
+// @ts-ignore
 import {RouterModule, Routes} from '@angular/router';
+// @ts-ignore
 import {NgModule} from '@angular/core';
 import {HomeDetailComponent} from './components/home-detail/home-detail.component';
-<<<<<<< HEAD
-import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
-import {RegisterHostComponent} from './components/register-host/register-host.component';
-import {AddHouseComponent} from './components/add-house/add-house.component';
-import {BookingComponent} from './components/booking/booking.component';
-=======
 import {HomeListForGuestComponent} from './components/user/home-list-for-guest/home-list-for-guest.component';
 import {RegisterHostComponent} from './components/host/register-host/register-host.component';
 import {AddHouseComponent} from './components/host/add-house/add-house.component';
@@ -19,7 +15,10 @@ import {ListOrderOfUserComponent} from './components/user/list-order-of-user/lis
 import {CategoryHouse} from './components/category-house/data-category/categoryHouse';
 import {CategoryHouseComponent} from './components/category-house/category-house.component';
 import {CancelOrderComponent} from './components/user/list-order-of-user/cancel-order/cancel-order.component';
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
+import {DeleteHouseComponent} from './components/host/delete-house/delete-house.component';
+import {EditHouseComponent} from './components/host/edit-house/edit-house.component';
+import {ListOrderComponent} from './components/host/list-order/list-order.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -56,12 +55,16 @@ const routes: Routes = [
     component: AddHouseComponent
   },
   {
-<<<<<<< HEAD
-    path: 'booking',
-    component: BookingComponent
-=======
     path: 'home/house-of-host',
     component: ListHouseOfHostComponent
+  },
+  {
+    path: 'home/house-of-host/:houseId/edit',
+    component: EditHouseComponent
+  },
+  {
+    path: 'home/house-of-host/delete/:houseId',
+    component: DeleteHouseComponent
   },
   {
     path: 'home/list-order-of-user',
@@ -78,7 +81,14 @@ const routes: Routes = [
   {
     path: 'home/list-order-of-user/cancel/:id',
     component: CancelOrderComponent
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
+  },
+  {
+    path: 'home/list-order-of-guest-each-house',
+    component: ListOrderComponent
+  },
+  {
+    path: 'information',
+    component: ProfileComponent
   }
 ];
 

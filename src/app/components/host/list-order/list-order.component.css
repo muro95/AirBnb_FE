@@ -1,0 +1,12 @@
+.table {
+  margin-top: 2%;
+  border: 1px solid;
+  cursor: pointer;
+}
+#pagination {
+  text-align: center;
+}
+th {
+  font-weight: 600;
+  font-size: 16px;
+}

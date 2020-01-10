@@ -7,24 +7,6 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-<<<<<<< HEAD
-import {UserComponent} from './components/user/user.component';
-import {PmComponent} from './components/pm/pm.component';
-import {AdminComponent} from './components/admin/admin.component';
-import {httpInterceptorProviders} from './auth/auth-interceptor';
-import {HttpClientModule} from '@angular/common/http';
-import {HomeDetailComponent} from './components/home-detail/home-detail.component';
-import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
-
-import {RegisterHostComponent} from './components/register-host/register-host.component';
-import {AddHouseComponent} from './components/add-house/add-house.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HeaderComponent} from './components/header/header.component';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
-import {OrderModule} from 'ngx-order-pipe';
-import {BookingComponent} from './components/booking/booking.component';
-=======
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeDetailComponent } from './components/home-detail/home-detail.component';
@@ -44,15 +26,21 @@ import { CategoryHouseComponent } from './components/category-house/category-hou
 import { CancelOrderComponent } from './components/user/list-order-of-user/cancel-order/cancel-order.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
+
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
-import { ProfileComponent } from './components/user/profile/profile.component';
+import {ProfileComponent} from './components/profile/profile.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { DeleteHouseComponent } from './components/host/delete-house/delete-house.component';
+import { EditHouseComponent } from './components/host/edit-house/edit-house.component';
+import { ListOrderComponent } from './components/host/list-order/list-order.component';
+
 
 // npm install --save @angular/material @angular/cdk @angular/animations
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
 
 
 const routes: Routes = [
@@ -61,6 +49,8 @@ const routes: Routes = [
   },
 ];
 
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,16 +63,17 @@ const routes: Routes = [
     AddHouseComponent,
     FooterComponent,
     HeaderComponent,
-<<<<<<< HEAD
-    BookingComponent
-=======
     UserBookingComponent,
     ListHouseOfHostComponent,
     ListOrderOfUserComponent,
     CategoryHouseComponent,
     CancelOrderComponent,
-    ProfileComponent
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
+    ProfileComponent,
+    CommentComponent,
+    CommentListComponent,
+    DeleteHouseComponent,
+    EditHouseComponent,
+    ListOrderComponent
   ],
   imports: [
     Ng2SearchPipeModule,
@@ -99,7 +90,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule,
+    AngularFireStorageModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

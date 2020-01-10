@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAEe63KBylqijobx3nsx1uIu9OBk_p7rZk',
-    authDomain: 'airbnb-database.firebaseapp.com',
-    databaseURL: 'https://airbnb-database.firebaseio.com',
-    projectId: 'airbnb-database',
-    storageBucket: 'airbnb-database.appspot.com',
-    messagingSenderId: '81914363517',
-    appId: '1:81914363517:web:735c69430b3a7a3070bb14',
-    measurementId: 'G-4LV035JCZ1'
+    apiKey: "AIzaSyBu4yVEiY4618cn-GZpYi2eMdBEko1_YVw",
+    authDomain: "fir-upload-file-8ce80.firebaseapp.com",
+    databaseURL: "https://fir-upload-file-8ce80.firebaseio.com",
+    projectId: "fir-upload-file-8ce80",
+    storageBucket: "fir-upload-file-8ce80.appspot.com",
+    messagingSenderId: "769989231487",
+    appId: "1:769989231487:web:c6eff7a14986ee420b504a",
+    measurementId: "G-3VLRBWHPCW"
   }
 };
 

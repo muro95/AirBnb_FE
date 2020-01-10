@@ -1,7 +1,9 @@
+<div *ngIf="message" class="alert alert-success" role="alert">
+  Đã cancel thành công!
+</div>
 <div *ngIf="order" class="table-bordered">
-
 <div *ngIf="order.data" class="full-content">
-  <p>Bạn có chắc muốn xóa : <u class="text-danger"></u></p>
+  <p>Bạn có chắc muốn hủy lịch đặt nhà: <u class="text-danger"></u></p>
   <table class="table table-bordered">
     <tr>
       <th><p>Tên nhà : </p></th>
