@@ -7,36 +7,27 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-<<<<<<< HEAD
-import {UserComponent} from './components/user/user.component';
-import {PmComponent} from './components/pm/pm.component';
-import {AdminComponent} from './components/admin/admin.component';
+// import {UserComponent} from './components/user/user.component';
+// import {PmComponent} from './components/pm/pm.component';
+// import {AdminComponent} from './components/admin/admin.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeDetailComponent} from './components/home-detail/home-detail.component';
-import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
-
-import {RegisterHostComponent} from './components/register-host/register-host.component';
-import {AddHouseComponent} from './components/add-house/add-house.component';
+// import {HomeListForGuestComponent} from './components/home-list-for-guest/home-list-for-guest.component';
+// import {RegisterHostComponent} from './components/register-host/register-host.component';
+// import {AddHouseComponent} from './components/add-house/add-house.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {HeaderComponent} from './components/header/header.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {OrderModule} from 'ngx-order-pipe';
 import {BookingComponent} from './components/booking/booking.component';
-=======
-import {httpInterceptorProviders} from './auth/auth-interceptor';
-import {HttpClientModule} from '@angular/common/http';
-import { HomeDetailComponent } from './components/home-detail/home-detail.component';
+// import {httpInterceptorProviders} from './auth/auth-interceptor';
+// import {HttpClientModule} from '@angular/common/http';
+// import { HomeDetailComponent } from './components/home-detail/home-detail.component';
 import {HomeListForGuestComponent} from './components/user/home-list-for-guest/home-list-for-guest.component';
-
 import { RegisterHostComponent } from './components/host/register-host/register-host.component';
 import {AddHouseComponent} from './components/host/add-house/add-house.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
-import {OrderModule} from 'ngx-order-pipe';
 import { UserBookingComponent } from './components/user/user-booking/user-booking.component';
 import { ListHouseOfHostComponent } from './components/host/list-house-of-host/list-house-of-host.component';
 import { ListOrderOfUserComponent } from './components/user/list-order-of-user/list-order-of-user.component';
@@ -52,7 +43,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import { ProfileComponent } from './components/user/profile/profile.component';
 
 // npm install --save @angular/material @angular/cdk @angular/animations
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
+// >>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
 
 
 const routes: Routes = [
@@ -73,16 +64,14 @@ const routes: Routes = [
     AddHouseComponent,
     FooterComponent,
     HeaderComponent,
-<<<<<<< HEAD
-    BookingComponent
-=======
+    BookingComponent,
     UserBookingComponent,
     ListHouseOfHostComponent,
     ListOrderOfUserComponent,
     CategoryHouseComponent,
     CancelOrderComponent,
     ProfileComponent
->>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
+// >>>>>>> 87974cb5127cbcb8df3743d5ca842d739f5e0d33
   ],
   imports: [
     Ng2SearchPipeModule,
